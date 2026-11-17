@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>段永平最新美股持仓深度分析报告 (2026)：商业模式、企业文化与自由现金流折现的复利哲学</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts: Inter + Noto Sans SC + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'Noto Sans SC', 'system-ui', '-apple-system', 'sans-serif'],
+                    mono: ['JetBrains Mono', 'monospace'],
+                },
+                colors: {
+                    navy: {
+                        950: '#070B14',
+                        900: '#0F172A',
+                        800: '#1E293B',
+                        700: '#334155',
+                    },
+                    dygold: {
+                        300: '#FDE047',
+                        400: '#FACC15',
+                        500: '#EAB308',
+                        600: '#CA8A04',
+                        700: '#A16207',
+                    },
+                    emerald: {
+                        400: '#34D399',
+                        500: '#10B981',
+                        600: '#059669',
+                    },
+                    indigo: {
+                        400: '#818CF8',
+                        500: '#6366F1',
+                        600: '#4F46E5',
+                    }
+                }
+            }
+        }
+    }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94A3B8;
+            border-radius: 3px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+        @media print {
+            #sidebar, #mobile-header, #theme-toggle-btn, .no-print {
+                display: none !important;
+            }
+            main {
+                margin-left: 0 !important;
+                padding: 0 !important;
+            }
+            section {
+                break-inside: avoid;
+            }
+        }
+        .report-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .report-card:hover {
+            transform: translateY(-2px);
+        }
+        .nav-link.active {
+            background: linear-gradient(90deg, rgba(234, 179, 8, 0.24) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-left: 3px solid #EAB308;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#1E293B] dark:bg-navy-950 dark:text-slate-100 antialiased selection:bg-dygold-500 selection:text-navy-950 transition-colors duration-200">
+
+    <!-- 顶部阅读进度条 -->
+    <div class="fixed top-0 left-0 right-0 h-1 z-50 bg-slate-200/70 dark:bg-navy-800">
+        <div id="reading-progress" class="h-full bg-gradient-to-r from-dygold-600 via-dygold-400 to-emerald-500 w-0 transition-all duration-150"></div>
+    </div>
+
+    <!-- 移动端顶部导航 -->
+    <header id="mobile-header" class="lg:hidden sticky top-0 z-40 bg-navy-900 text-white border-b border-slate-800 px-4 py-3 flex items-center justify-between shadow-md">
+        <div class="flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-dygold-400 to-dygold-600 flex items-center justify-center font-extrabold text-navy-950 text-xs shadow">
+                DY
+            </div>
+            <div>
+                <div class="text-[11px] text-dygold-400 font-semibold tracking-wider uppercase">H&H / Invest Philosophy</div>
+                <div class="text-sm font-bold leading-tight">段永平持仓与哲学深度解析</div>
+            </div>
+        </div>
+        <div class="flex items-center space-x-2">
+            <button onclick="toggleTheme()" class="p-2 rounded-lg bg-navy-800 hover:bg-navy-700 text-slate-300">
+                <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </button>
+            <button onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-navy-800 hover:bg-navy-700 text-white">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- 移动端侧边抽屉 -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 hidden lg:hidden">
+        <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm" onclick="toggleMobileMenu()"></div>
+        <nav class="relative w-72 max-w-[80vw] h-full bg-navy-900 text-slate-300 flex flex-col justify-between p-5 overflow-y-auto shadow-2xl">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                    <span class="font-bold text-white text-base">持仓解析导航</span>
+                    <button onclick="toggleMobileMenu()" class="p-1.5 rounded-lg text-slate-400 hover:text-white">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+                <ul class="mt-4 space-y-1.5 text-sm">
+                    <li><a href="#sec-exec" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">00. 核心投资哲学与底层逻辑</a></li>
+                    <li><a href="#sec-anchor" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">01. 终极压舱石：苹果与伯克希尔</a></li>
+                    <li><a href="#sec-growth" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">02. 进攻与生产力跃迁：英伟达与特斯拉</a></li>
+                    <li><a href="#sec-retail" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">03. 商业模式效率极致：拼多多</a></li>
+                    <li><a href="#sec-matrix" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">04. 持仓全景矩阵与估值复盘</a></li>
+                    <li><a href="#sec-mistakes" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">05. “不做错事”与能力圈边界</a></li>
+                </ul>
+            </div>
+            <div class="pt-4 border-t border-slate-800 text-xs text-slate-400">
+                <p>大道 H&H 投资哲学研究组</p>
+                <p class="mt-1">版本：2026年度深度复盘版</p>
+            </div>
+        </nav>
+    </div>
+
+    <!-- 桌面端左侧固定导航 (280px) -->
+    <aside id="sidebar" class="hidden lg:flex fixed top-0 left-0 bottom-0 w-[280px] bg-[#0F172A] text-slate-300 flex-col justify-between border-r border-slate-800 z-30 select-none">
+        <div>
+            <div class="p-5 border-b border-slate-800/80">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-dygold-400 via-dygold-500 to-dygold-600 flex items-center justify-center text-navy-950 font-extrabold text-base shadow-lg shadow-dygold-500/25">
+                        DY
+                    </div>
+                    <div>
+                        <span class="inline-block text-[10px] font-bold tracking-widest uppercase text-dygold-400 bg-dygold-500/15 px-2 py-0.5 rounded">H&H Philosophy</span>
+                        <h2 class="text-white font-bold text-base mt-0.5 tracking-tight">段永平持仓深度解析</h2>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                    买股票就是买公司 · 极简商业逻辑 · 自由现金流折现与企业文化之眼
+                </p>
+            </div>
+
+            <div class="px-5 py-3 bg-navy-950/70 border-b border-slate-800/80 space-y-1.5 text-xs">
+                <div class="flex items-center justify-between">
+                    <span class="text-slate-400">核心投资标的</span>
+                    <span class="font-mono font-bold text-white">AAPL, BRK, NVDA, PDD, TSLA</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-slate-400">核心评价标准</span>
+                    <span class="font-mono font-bold text-emerald-400">商业模式 & 文化 & FCF</span>
+                </div>
+            </div>
+
+            <div class="px-3 py-3.5 overflow-y-auto max-h-[calc(100vh-280px)]">
+                <div class="px-3 mb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">报告核心章节</div>
+                <nav id="desktop-nav" class="space-y-1 text-[13px]">
+                    <a href="#sec-exec" data-target="sec-exec" class="nav-link active flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+                        <span><span class="text-xs font-mono text-dygold-400 mr-2">00</span>核心投资哲学与底层逻辑</span>
+                    </a>
+                    <a href="#sec-anchor" data-target="sec-anchor" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+                        <span><span class="text-xs font-mono text-slate-500 mr-2">01</span>终极压舱石：苹果与伯克希尔</span>
+                    </a>
+                    <a href="#sec-growth" data-target="sec-growth" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+                        <span><span class="text-xs font-mono text-slate-500 mr-2">02</span>进攻与科技跃迁：英伟达与特斯拉</span>
+                    </a>
+                    <a href="#sec-retail" data-target="sec-retail" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+                        <span><span class="text-xs font-mono text-slate-500 mr-2">03</span>商业效率极致：拼多多</span>
+                    </a>
+                    <a href="#sec-matrix" data-target="sec-matrix" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+                        <span><span class="text-xs font-mono text-slate-500 mr-2">04</span>持仓全景矩阵与估值复盘</span>
+                    </a>
+                    <a href="#sec-mistakes" data-target="sec-mistakes" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+                        <span><span class="text-xs font-mono text-slate-500 mr-2">05</span>“不做错事”与能力圈边界</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="p-4 border-t border-slate-800/80 bg-navy-950/50 space-y-2.5">
+            <div class="flex items-center justify-between">
+                <span class="text-xs text-slate-400">阅读主题切换</span>
+                <button id="theme-toggle-btn" onclick="toggleTheme()" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-xs font-medium text-slate-200 border border-slate-700 transition cursor-pointer">
+                    <span class="dark:hidden">深色护眼模式</span>
+                    <span class="hidden dark:inline">机构亮色模式</span>
+                </button>
+            </div>
+            <button onclick="window.print()" class="w-full flex items-center justify-center space-x-2 py-2 px-3 rounded-lg bg-gradient-to-r from-dygold-500 to-dygold-600 hover:from-dygold-600 hover:to-dygold-700 text-navy-950 text-xs font-extrabold transition shadow-sm cursor-pointer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                <span>打印 / 导出 PDF 研报</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main class="lg:ml-[280px] min-h-screen">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8 py-8 lg:py-12 space-y-12">
+
+            <!-- 00. 封面与执行摘要 -->
+            <section id="sec-exec" class="scroll-mt-20">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs text-slate-500 dark:text-slate-400">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="px-2.5 py-1 rounded-md bg-dygold-500/15 text-dygold-700 dark:text-dygold-400 font-bold border border-dygold-500/30">分析视角：段永平（大道）投资哲学还原</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-200/70 dark:bg-navy-800 text-slate-700 dark:text-slate-300 font-medium">核心逻辑：商业模式 + 企业文化 + 自由现金流</span>
+                    </div>
+                    <div class="flex items-center space-x-3 font-mono">
+                        <span>发布时间：2026年11月</span>
+                        <span>H&H Research</span>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy-900 via-navy-800 to-slate-900 text-white p-6 sm:p-10 shadow-xl border border-slate-700/70">
+                    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#EAB308 1.2px, transparent 1.2px); background-size: 24px 24px;"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-dygold-500/20 border border-dygold-400/40 text-dygold-300 text-xs font-semibold mb-4">
+                            <span class="w-2 h-2 rounded-full bg-dygold-400 animate-pulse"></span>
+                            <span>CORE MENTAL MODEL · 买股票就是买公司 × 极简商业洞察 × FCF 折现与能力圈边界</span>
+                        </div>
+                        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight text-white">
+                            段永平美股持仓与底层买入逻辑深度解析：站在“大道”视角看懂商业本质与复利机器
+                        </h1>
+                        <p class="mt-4 text-sm sm:text-base text-slate-300 max-w-4xl leading-relaxed">
+                            在段永平（大道）的投资世界里，股票从来不是跳动的符号或炒作的筹码，而是<strong class="text-dygold-300">生息的资产和具有护城河的商业实体</strong>。通过复盘其历年公开言论及美股持仓变动（如苹果、伯克希尔、英伟达、拼多多、特斯拉），他的投资逻辑归结为极其纯粹的三大标尺：<strong>这家公司的商业模式是否足够好？其企业文化（做对的事情）能否保证其长盛不衰？其未来能够折现出多少实打 $\text{Free Cash Flow}$（自由现金流）？</strong>
+                        </p>
+
+                        <div class="mt-6 pt-6 border-t border-slate-700/80 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+                            <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                                <div class="text-slate-400 font-medium mb-1">压舱石底仓</div>
+                                <div class="text-white font-semibold">苹果与伯克希尔：提供极致的现金流心安与商业模式终极信赖</div>
+                            </div>
+                            <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                                <div class="text-slate-400 font-medium mb-1">科技与AI生产力跃迁</div>
+                                <div class="text-dygold-400 font-semibold">英伟达与特斯拉：从早期审视到看清其算力垄断与FSD软件生态的终局</div>
+                            </div>
+                            <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                                <div class="text-slate-400 font-medium mb-1">商业效率极致</div>
+                                <div class="text-emerald-400 font-semibold">拼多多：用极致性价比和全球化心智满足消费者永恒需求的典范</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 核心四大指标栏 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-6">
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400">核心买入准则一</div>
+                        <div class="mt-2 text-lg font-extrabold text-slate-900 dark:text-white">懂不懂 (能力圈)</div>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                            “不懂不做”。必须能看清公司未来 10 年的现金流走向，不熟不买，不受市场短期热点情绪裹挟。
+                        </p>
+                    </div>
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400">核心买入准则二</div>
+                        <div class="mt-2 text-lg font-extrabold text-slate-900 dark:text-white">商业模式 (护城河)</div>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                            是否有定价权？客户黏性高不高？是否具备让竞争对手难以跨越的网络效应或极高转换成本。
+                        </p>
+                    </div>
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400">核心买入准则三</div>
+                        <div class="mt-2 text-lg font-extrabold text-slate-900 dark:text-white">企业文化 (做对的事)</div>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                            “做对的事情，把事情做对”。极度看重管理层的诚信、用户导向以及长期主义价值观。
+                        </p>
+                    </div>
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400">核心买入准则四</div>
+                        <div class="mt-2 text-lg font-extrabold text-slate-900 dark:text-white">自由现金流折现</div>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                            一切估值归结为折现。净利润可以美化，但长期真金白银的自由现金流才是衡量企业价值的唯一标尺。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 01. 终极压舱石：苹果与伯克希尔 -->
+            <section id="sec-anchor" class="scroll-mt-20 space-y-6">
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-dygold-600 dark:text-dygold-400">Section 01 · Ultimate Cash Flow Anchors</span>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">一、 终极压舱石：苹果 (Apple) 与 伯克希尔哈撒韦 (Berkshire Hathaway)</h2>
+                    </div>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">占持仓绝对核心 · “看得见的超级印钞机”</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 苹果深度分析 -->
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-dygold-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded bg-dygold-500/15 text-dygold-700 dark:text-dygold-400 text-xs font-bold">绝对重仓标杆</span>
+                                <span class="font-mono text-xs text-slate-500">AAPL · 生态垄断</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">苹果 (Apple)：无与伦比的用户黏性与现金流机器</h3>
+                            <p class="mt-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                段永平对苹果的钟爱长达十数年。在他眼里，苹果根本不是一家单纯的“硬件制造公司”，而是一家拥有<strong>人类商业史上最强用户忠诚度与软件生态闭环的消费巨头</strong>。
+                            </p>
+                            <div class="mt-3 space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-dygold-600 font-bold">✓</span>
+                                    <span><strong>极致的产品文化：</strong>库克及其团队将“把事情做对”发挥到极致，供应链管理与硬件做工无人能及。</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-dygold-600 font-bold">✓</span>
+                                    <span><strong>极高的转换成本：</strong>iPhone + iOS + iCloud 构筑了深不可测的数字护城河，换机率极低。</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-dygold-600 font-bold">✓</span>
+                                    <span><strong>海量自由现金流回购：</strong>公司通过巨额股票回购持续注销股本，让每股含金量逐年裂变。</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-mono text-slate-500 flex justify-between">
+                            <span>大道视角：心安的极致代表</span>
+                            <span class="text-dygold-600 dark:text-dygold-400 font-semibold">长线底仓不轻易动摇</span>
+                        </div>
+                    </div>
+
+                    <!-- 伯克希尔深度分析 -->
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-emerald-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 text-xs font-bold">终极防波堤</span>
+                                <span class="font-mono text-xs text-slate-500">BRK.A/B · 资本配置艺术</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">伯克希尔 (Berkshire Hathaway)：巴菲特投资哲学的实体化</h3>
+                            <p class="mt-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                段永平是巴菲特价值投资理念的坚定信奉者（曾以 62 万美元拍下巴菲特午餐）。在他看来，伯克希尔汇聚了全美国最优质的实体产业（如BNSF铁路、GEICO保险、伯克希尔能源）和庞大浮存金。
+                            </p>
+                            <div class="mt-3 space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-emerald-600 font-bold">✓</span>
+                                    <span><strong>零风险的浮存金模式：</strong>通过保险业务获得源源不断的低成本甚至负成本资金进行长期投资。</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-emerald-600 font-bold">✓</span>
+                                    <span><strong>诚实与伟大的企业文化：</strong>巴菲特和芒格构建的诚信文化和资本配置逻辑，是抵御任何宏观危机的避风港。</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-mono text-slate-500 flex justify-between">
+                            <span>大道视角：把钱交给最懂资本的人</span>
+                            <span class="text-emerald-600 dark:text-emerald-400 font-semibold">长青资产的终极样板</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 02. 进攻与生产力跃迁：英伟达与特斯拉 -->
+            <section id="sec-growth" class="scroll-mt-20 space-y-6">
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Section 02 · Attack & Productivity Shift</span>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">二、 进攻与生产力跃迁：英伟达 (NVIDIA) 与 特斯拉 (Tesla)</h2>
+                    </div>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">顺应时代底层变革 · AI 算力与自动驾驶终局</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 英伟达解析 -->
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-indigo-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded bg-indigo-500/15 text-indigo-700 dark:text-indigo-400 text-xs font-bold">AI 时代卖铲人</span>
+                                <span class="font-mono text-xs text-slate-500">NVDA · 算力垄断</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">英伟达 (NVIDIA)：从硬件周期误区到看清 CUDA 生态</h3>
+                            <p class="mt-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                段永平早年坦言对纯芯片硬件的周期性心存谨慎，但他展现了真正伟大投资者最稀缺的素质——<strong>随着事实改变而改变观点</strong>。当他看清英伟达构建的不仅是芯片，而是全球开发者无法离开的 <strong class="text-slate-900 dark:text-white">CUDA 软件生态垄断</strong>时，其认知彻底打开。
+                            </p>
+                            <div class="mt-3 space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-indigo-600 font-bold">✓</span>
+                                    <span><strong>软硬件深度协同的极高壁垒：</strong>算力基础设施的绝对霸主，构筑了近乎“人无我有”的差异化盈利能力。</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-indigo-600 font-bold">✓</span>
+                                    <span><strong>估值与波段管理：</strong>在大涨后适度通过期权或动态仓位进行平衡，体现了其理性、非情绪化的资金管理纪律。</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-mono text-slate-500 flex justify-between">
+                            <span>大道视角：看懂 AI 时代的底层卖铲人</span>
+                            <span class="text-indigo-600 dark:text-indigo-400 font-semibold">顺应生产力革命的进攻配置</span>
+                        </div>
+                    </div>
+
+                    <!-- 特斯拉解析 -->
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-dygold-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded bg-dygold-500/15 text-dygold-700 dark:text-dygold-400 text-xs font-bold">软件与具身智能终局</span>
+                                <span class="font-mono text-xs text-slate-500">TSLA · FSD 订阅生态</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">特斯拉 (Tesla)：从汽车制造到软件服务订阅的质变</h3>
+                            <p class="mt-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                段永平曾坦言对马斯克的某些风格保持距离，但他坚守“以产品和商业逻辑代替个人好恶”的原则。在深度体验特斯拉的产品和端到端（End-to-End）FSD 自动驾驶进化后，他认识到特斯拉的护城河早已超越传统车企。
+                            </p>
+                            <div class="mt-3 space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-dygold-600 font-bold">✓</span>
+                                    <span><strong>商业模式的降维打击：</strong>一旦 FSD 实现完全无人驾驶商业化，硬件销售将转变为高毛利的软件订阅。</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-dygold-600 font-bold">✓</span>
+                                    <span><strong>极致的产品主义文化：</strong>在电动车与能源储能领域持续进行颠覆式创新。</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-mono text-slate-500 flex justify-between">
+                            <span>大道视角：以产品终局打破刻板印象</span>
+                            <span class="text-dygold-600 dark:text-dygold-400 font-semibold">押注智能出行未来的看涨期权</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 03. 商业模式效率极致：拼多多 -->
+            <section id="sec-retail" class="scroll-mt-20 space-y-6">
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-dygold-600 dark:text-dygold-400">Section 03 · Commercial Efficiency Supremacy</span>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">三、 商业模式效率极致：拼多多 (PDD Holdings)</h2>
+                    </div>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">极致性价比与全球供应链出海</span>
+                </div>
+
+                <div class="bg-white dark:bg-navy-900 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                        <div class="lg:col-span-7 space-y-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">拼多多：从“看不懂”到“看清其商业本质”的认知升级</h3>
+                            <p>
+                                段永平对拼多多的投资堪称教科书级别的认知变现。他曾坦言早期看不懂其低价拼团逻辑，但随着深入研究其商业本质，他发现拼多多做了一件所有伟大零售企业都在做的事——<strong class="text-slate-900 dark:text-white">消灭中间商冗余环节，用极致的供应链效率把实惠直接带给消费者</strong>。
+                            </p>
+                            <p>
+                                这种对“消费者导向（Consumer First）”的极致践行，使拼多多在国内电商红海中杀出重围；而其推出的跨境出海平台 <strong>Temu</strong> 更进一步证明了其将中国高性价比制造业产能直接链接全球消费者的强大组织基因。
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-navy-800/60 border border-slate-200 dark:border-slate-700">
+                                    <div class="font-bold text-slate-900 dark:text-white text-xs mb-1">商业效率最高原则</div>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">砍掉繁琐分销，让工厂与消费者直连，流量分配极度高效。</p>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-navy-800/60 border border-slate-200 dark:border-slate-700">
+                                    <div class="font-bold text-slate-900 dark:text-white text-xs mb-1">全球化远征（Temu）</div>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">将高性价比心智成功复制到北美及全球，打开长期成长空间。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 bg-gradient-to-br from-navy-900 to-navy-800 text-white rounded-xl p-6 border border-slate-700 space-y-4">
+                            <div class="text-xs text-dygold-400 font-mono font-bold uppercase tracking-wider">大道核心投资金句</div>
+                            <p class="text-sm italic leading-relaxed text-slate-200">
+                                “伟大公司不需要天天琢磨怎么打败竞争对手，它们只需要天天琢磨怎么更好地服务消费者。拼多多在这点上做对了最核心的事。”
+                            </p>
+                            <div class="pt-3 border-t border-slate-700/80 flex items-center justify-between text-xs font-mono text-slate-400">
+                                <span>评级：长期高成长底仓</span>
+                                <span class="text-emerald-400 font-semibold">效率至上</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 04. 持仓全景矩阵与估值复盘 -->
+            <section id="sec-matrix" class="scroll-mt-20 space-y-6">
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-dygold-600 dark:text-dygold-400">Section 04 · Portfolio Matrix & Valuation Framework</span>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">四、 持仓全景矩阵与估值复盘：防守与进攻的完美平衡</h2>
+                    </div>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">核心持仓资产配置逻辑梳理</span>
+                </div>
+
+                <div class="bg-white dark:bg-navy-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100/80 dark:bg-navy-800/80 border-b border-slate-200 dark:border-slate-700 text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+                                    <th class="py-4 px-5 min-w-[160px]">公司名称与代码</th>
+                                    <th class="py-4 px-4 min-w-[130px]">在大道组合中的定位</th>
+                                    <th class="py-4 px-4 min-w-[150px]">核心商业模式与护城河</th>
+                                    <th class="py-4 px-4 min-w-[120px]">企业文化评价</th>
+                                    <th class="py-4 px-5 min-w-[240px]">段永平视角的核心买入/持有理由</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm">
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-4 px-5 font-bold text-slate-900 dark:text-white">苹果 (AAPL)</td>
+                                    <td class="py-4 px-4"><span class="px-2 py-0.5 rounded bg-dygold-500/15 text-dygold-700 dark:text-dygold-400 font-semibold text-xs">终极现金牛底仓</span></td>
+                                    <td class="py-4 px-4 text-slate-700 dark:text-slate-300">硬件+iOS高粘性生态闭环</td>
+                                    <td class="py-4 px-4 text-emerald-600 font-semibold">极致的用户与品质导向</td>
+                                    <td class="py-4 px-5 text-slate-600 dark:text-slate-300 leading-relaxed">
+                                        极低的消费流失率、庞大的自由现金流和持续的大额回购注销，提供无可替代的心安感。
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-4 px-5 font-bold text-slate-900 dark:text-white">伯克希尔 (BRK.A/B)</td>
+                                    <td class="py-4 px-4"><span class="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 font-semibold text-xs">资本防波堤</span></td>
+                                    <td class="py-4 px-4 text-slate-700 dark:text-slate-300">优质产业集群 + 巨额浮存金</td>
+                                    <td class="py-4 px-4 text-emerald-600 font-semibold">诚实、长期主义、资本配置大师</td>
+                                    <td class="py-4 px-5 text-slate-600 dark:text-slate-300 leading-relaxed">
+                                        代表价值投资最高水准，以极低成本浮存金穿越任何经济周期，是最稳固的资产避风港。
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-4 px-5 font-bold text-slate-900 dark:text-white">英伟达 (NVDA)</td>
+                                    <td class="py-4 px-4"><span class="px-2 py-0.5 rounded bg-indigo-500/15 text-indigo-700 dark:text-indigo-400 font-semibold text-xs">AI 算力基建进攻手</span></td>
+                                    <td class="py-4 px-4 text-slate-700 dark:text-slate-300">GPU 硬件 + CUDA 软件垄断</td>
+                                    <td class="py-4 px-4 text-indigo-600 font-semibold">技术信仰与极强迭代能力</td>
+                                    <td class="py-4 px-5 text-slate-600 dark:text-slate-300 leading-relaxed">
+                                        看清其构筑的 AI 时代底层算力基建与开发者生态护城河，顺应时代生产力大跃迁。
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-4 px-5 font-bold text-slate-900 dark:text-white">拼多多 (PDD)</td>
+                                    <td class="py-4 px-4"><span class="px-2 py-0.5 rounded bg-dygold-500/15 text-dygold-700 dark:text-dygold-400 font-semibold text-xs">高效零售增长引擎</span></td>
+                                    <td class="py-4 px-4 text-slate-700 dark:text-slate-300">直连工厂与消费者的极致效率</td>
+                                    <td class="py-4 px-4 text-dygold-600 font-semibold">消费者导向、务实拼搏</td>
+                                    <td class="py-4 px-5 text-slate-600 dark:text-slate-300 leading-relaxed">
+                                        满足了全球消费者对高性价比的永恒需求，Temu 成功将高效率基因复制到海外。
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-4 px-5 font-bold text-slate-900 dark:text-white">特斯拉 (TSLA)</td>
+                                    <td class="py-4 px-4"><span class="px-2 py-0.5 rounded bg-teal-500/15 text-teal-700 dark:text-teal-400 font-semibold text-xs">具身智能看涨期权</span></td>
+                                    <td class="py-4 px-4 text-slate-700 dark:text-slate-300">电动车制造 + FSD 软件订阅</td>
+                                    <td class="py-4 px-4 text-teal-600 font-semibold">第一性原理与颠覆式创新</td>
+                                    <td class="py-4 px-5 text-slate-600 dark:text-slate-300 leading-relaxed">
+                                        以产品和商业逻辑打破成见，看好其由硬件制造向高利润率自动驾驶软件生态跃迁的终局。
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 05. “不做错事”与能力圈边界 -->
+            <section id="sec-mistakes" class="scroll-mt-20 space-y-6">
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Section 05 · Don't Do Wrong Things & Circle of Competence</span>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">五、 “不做错事”与能力圈边界：大道投资哲学的核心精髓</h2>
+                    </div>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">长期立于不败之地的纪律</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs font-mono font-bold text-dygold-600 dark:text-dygold-400 uppercase">Rule 01</div>
+                            <h3 class="font-bold text-slate-900 dark:text-white text-base mt-1">做对的事情（Do the right thing）</h3>
+                            <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                比“把事情做对”更重要的是“做对的事情”。这意味着必须买商业模式优秀、具备宽广经济护城河的公司。方向错了，执行力越强死得越快。
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-slate-500">
+                            选择大于努力
+                        </div>
+                    </div>
+
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase">Rule 02</div>
+                            <h3 class="font-bold text-slate-900 dark:text-white text-base mt-1">不懂不做与能力圈（Circle of Competence）</h3>
+                            <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                投资不是比谁懂得多，而是知道自己的边界在哪里。不因为 FOMO 情绪去碰看不懂的加密货币或纯概念炒作，只在自己能看透 10 年现金流的领域下重注。
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-slate-500">
+                            守住能力边界
+                        </div>
+                    </div>
+
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400 uppercase">Rule 03</div>
+                            <h3 class="font-bold text-slate-900 dark:text-white text-base mt-1">远离杠杆与“不做错事”（Don't do wrong things）</h3>
+                            <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                芒格曾说：“如果我知道我会死在哪里，那我将永远不去那个地方。”段永平极力主张不借钱炒股、不搞复杂衍生品，只要不犯致命错误，时间自然会带来复利。
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-slate-500">
+                            活得久比跑得快重要
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 页脚免责声明 -->
+            <footer class="pt-8 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-2 pb-10">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-semibold text-slate-700 dark:text-slate-300">
+                    <span>段永平（大道）投资哲学与美股持仓深度逻辑复盘报告 · H&H Research</span>
+                    <span>数据基准：2026年度公开市场披露与价值投资哲学归纳</span>
+                </div>
+                <p class="leading-relaxed">
+                    <strong>免责声明：</strong>本报告基于段永平历年公开访谈、雪球言论及美股 13F 披露持仓整理归纳，旨在还原其“买股票就是买公司、看重商业模式与自由现金流”的投资底层逻辑与哲学框架。报告内容不构成任何具体的证券买卖建议、资产管理服务或收益承诺，投资有风险，决策需独立审慎。
+                </p>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- 交互脚本 -->
+    <script>
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobile-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('#desktop-nav .nav-link');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            document.getElementById('reading-progress').style.width = `${Math.min(100, Math.max(0, scrollPercent))}%`;
+
+            let currentId = 'sec-exec';
+            sections.forEach(sec => {
+                const top = sec.offsetTop - 160;
+                if (scrollTop >= top) {
+                    currentId = sec.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const numSpan = link.querySelector('span span');
+                if (numSpan) {
+                    numSpan.classList.remove('text-dygold-400');
+                    numSpan.classList.add('text-slate-500');
+                }
+                if (link.dataset.target === currentId) {
+                    link.classList.add('active');
+                    if (numSpan) {
+                        numSpan.classList.remove('text-slate-500');
+                        numSpan.classList.add('text-dygold-400');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

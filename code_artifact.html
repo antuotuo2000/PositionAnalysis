@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>段永平最新美股持仓深度分析报告 (2026Q3)：苹果与伯克希尔“压舱石”稳固、高位减持英伟达、坚定加仓拼多多与特斯拉</title>
+ <!-- Tailwind CSS -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <!-- Chart.js -->
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <!-- Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+ <script>
+ tailwind.config = {
+ darkMode: 'class',
+ theme: {
+ extend: {
+ fontFamily: {
+ sans: ['Inter', 'Noto Sans SC', 'system-ui', '-apple-system', 'sans-serif'],
+ mono: ['JetBrains Mono', 'monospace'],
+ },
+ colors: {
+ navy: {
+ 950: '#070B14',
+ 900: '#0F172A',
+ 800: '#1E293B',
+ 700: '#334155',
+ },
+ gold: {
+ 300: '#FCD34D',
+ 400: '#FBBF24',
+ 500: '#F59E0B',
+ 600: '#D97706',
+ 700: '#B45309',
+ }
+ }
+ }
+ }
+ }
+ </script>
+
+ <style>
+ ::-webkit-scrollbar { width: 6px; height: 6px; }
+ ::-webkit-scrollbar-track { background: transparent; }
+ ::-webkit-scrollbar-thumb { background: #94A3B8; border-radius: 3px; }
+ .dark ::-webkit-scrollbar-thumb { background: #475569; }
+
+ @media print {
+ #sidebar, #mobile-header, #theme-toggle-btn, .no-print { display: none !important; }
+ main { margin-left: 0 !important; padding: 0 !important; }
+ section { break-inside: avoid; }
+ }
+
+ .report-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+ .report-card:hover { transform: translateY(-2px); }
+
+ .nav-link.active {
+ background: linear-gradient(90deg, rgba(245, 158, 11, 0.24) 0%, rgba(16, 185, 129, 0.06) 100%);
+ border-left: 3px solid #F59E0B;
+ color: #FFFFFF;
+ font-weight: 600;
+ }
+ </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#1E293B] dark:bg-navy-950 dark:text-slate-100 antialiased selection:bg-gold-500 selection:text-navy-950 transition-colors duration-200">
+
+ <!-- 顶部阅读进度条 -->
+ <div class="fixed top-0 left-0 right-0 h-1 z-50 bg-slate-200/70 dark:bg-navy-800">
+ <div id="reading-progress" class="h-full bg-gradient-to-r from-gold-600 via-gold-400 to-emerald-500 w-0 transition-all duration-150"></div>
+ </div>
+
+ <!-- 移动端顶部导航栏 -->
+ <header id="mobile-header" class="lg:hidden sticky top-0 z-40 bg-navy-900 text-white border-b border-slate-800 px-4 py-3 flex items-center justify-between shadow-md">
+ <div class="flex items-center space-x-2.5">
+ <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center font-extrabold text-navy-950 text-xs shadow">
+ DYP
+ </div>
+ <div>
+ <div class="text-[11px] text-gold-400 font-semibold tracking-wider uppercase">H&H International 13F</div>
+ <div class="text-sm font-bold leading-tight">段永平 2026Q3 深度持仓分析</div>
+ </div>
+ </div>
+ <div class="flex items-center space-x-2">
+ <button onclick="toggleTheme()" class="p-2 rounded-lg bg-navy-800 hover:bg-navy-700 text-slate-300">
+ <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+ <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+ </button>
+ <button onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-navy-800 hover:bg-navy-700 text-white">
+ <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+ </button>
+ </div>
+ </header>
+
+ <!-- 移动端抽屉菜单 -->
+ <div id="mobile-drawer" class="fixed inset-0 z-50 hidden lg:hidden">
+ <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm" onclick="toggleMobileMenu()"></div>
+ <nav class="relative w-72 max-w-[80vw] h-full bg-navy-900 text-slate-300 flex flex-col justify-between p-5 overflow-y-auto shadow-2xl">
+ <div>
+ <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+ <span class="font-bold text-white text-base">研报目录导航</span>
+ <button onclick="toggleMobileMenu()" class="p-1.5 rounded-lg text-slate-400 hover:text-white">
+ <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+ </button>
+ </div>
+ <ul class="mt-4 space-y-1.5 text-sm">
+ <li><a href="#sec-exec" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800">00. 核心结论与资产大盘</a></li>
+ <li><a href="#sec-anchor" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800">01. 压舱石：苹果与伯克希尔</a></li>
+ <li><a href="#sec-tech" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800">02. 科技股分化：减持英伟达与谷歌</a></li>
+ <li><a href="#sec-growth" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800">03. 增持与新进：拼多多、特斯拉与SpaceX</a></li>
+ <li><a href="#sec-philosophy" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800">04. 深度复盘：段永平投资哲学</a></li>
+ </ul>
+ </div>
+ <div class="pt-4 border-t border-slate-800 text-xs text-slate-400">
+ <p>数据基准：2026年三季度 13F 报告</p>
+ </div>
+ </nav>
+ </div>
+
+ <!-- 桌面端左侧固定导航栏 -->
+ <aside id="sidebar" class="hidden lg:flex fixed top-0 left-0 bottom-0 w-[280px] bg-[#0F172A] text-slate-300 flex-col justify-between border-r border-slate-800 z-30 select-none">
+ <div>
+ <div class="p-5 border-b border-slate-800/80">
+ <div class="flex items-center space-x-3">
+ <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 flex items-center justify-center text-navy-950 font-extrabold text-base shadow-lg shadow-gold-500/25">
+ DYP
+ </div>
+ <div>
+ <span class="inline-block text-[10px] font-bold tracking-widest uppercase text-gold-400 bg-gold-500/15 px-2 py-0.5 rounded">H&H 13F Analysis</span>
+ <h2 class="text-white font-bold text-base mt-0.5 tracking-tight">段永平 2026Q3 研报</h2>
+ </div>
+ </div>
+ <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+ 聚焦商业模式与自由现金流 · 高度集中化投资组合追踪
+ </p>
+ </div>
+
+ <div class="px-5 py-3 bg-navy-950/70 border-b border-slate-800/80 space-y-1.5 text-xs">
+ <div class="flex items-center justify-between">
+ <span class="text-slate-400">美股持仓总市值</span>
+ <span class="font-mono font-bold text-white">~$171.9 亿</span>
+ </div>
+ <div class="flex items-center justify-between">
+ <span class="text-slate-400">持仓标的数</span>
+ <span class="font-mono font-bold text-emerald-400">16 只 (较上季净减2)</span>
+ </div>
+ <div class="flex items-center justify-between pt-1 border-t border-slate-800/70">
+ <span class="text-slate-400">前两大重仓占比</span>
+ <span class="font-mono font-bold text-gold-400">> 65.0% (苹果+伯克希尔)</span>
+ </div>
+ </div>
+
+ <div class="px-3 py-3.5 overflow-y-auto max-h-[calc(100vh-310px)]">
+ <div class="px-3 mb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">报告核心章节</div>
+ <nav id="desktop-nav" class="space-y-1 text-[13px]">
+ <a href="#sec-exec" data-target="sec-exec" class="nav-link active flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+ <span><span class="text-xs font-mono text-gold-400 mr-2">00</span>核心结论与资产大盘</span>
+ </a>
+ <a href="#sec-anchor" data-target="sec-anchor" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+ <span><span class="text-xs font-mono text-slate-500 mr-2">01</span>压舱石：苹果与伯克希尔</span>
+ </a>
+ <a href="#sec-tech" data-target="sec-tech" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+ <span><span class="text-xs font-mono text-slate-500 mr-2">02</span>科技股分化：英伟达与谷歌</span>
+ </a>
+ <a href="#sec-growth" data-target="sec-growth" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+ <span><span class="text-xs font-mono text-slate-500 mr-2">03</span>增持与新进：拼多多/特斯拉/SpaceX</span>
+ </a>
+ <a href="#sec-philosophy" data-target="sec-philosophy" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+ <span><span class="text-xs font-mono text-slate-500 mr-2">04</span>深度复盘：段永平投资哲学</span>
+ </a>
+ </nav>
+ </div>
+ </div>
+
+ <div class="p-4 border-t border-slate-800/80 bg-navy-950/50 space-y-2.5">
+ <div class="flex items-center justify-between">
+ <span class="text-xs text-slate-400">阅读主题切换</span>
+ <button id="theme-toggle-btn" onclick="toggleTheme()" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-xs font-medium text-slate-200 border border-slate-700 transition cursor-pointer">
+ <span class="dark:hidden">深色护眼模式</span>
+ <span class="hidden dark:inline">机构亮色模式</span>
+ </button>
+ </div>
+ <button onclick="window.print()" class="w-full flex items-center justify-center space-x-2 py-2 px-3 rounded-lg bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 text-xs font-extrabold transition shadow-sm cursor-pointer">
+ <span>打印 / 导出 PDF 研报</span>
+ </button>
+ </div>
+ </aside>
+
+ <!-- 主内容区 -->
+ <main class="lg:ml-[280px] min-h-screen">
+ <div class="max-w-6xl mx-auto px-4 sm:px-8 py-8 lg:py-12 space-y-12">
+
+ <!-- =========================================================
+ 00. 核心结论与资产大盘
+ ========================================================= -->
+ <section id="sec-exec" class="scroll-mt-20">
+ <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs text-slate-500 dark:text-slate-400">
+ <div class="flex flex-wrap items-center gap-2">
+ <span class="px-2.5 py-1 rounded-md bg-gold-500/15 text-gold-700 dark:text-gold-400 font-bold border border-gold-500/30">H&H International Investment 13F 深度拆解</span>
+ <span class="px-2.5 py-1 rounded-md bg-slate-200/70 dark:bg-navy-800 text-slate-700 dark:text-slate-300 font-medium">覆盖周期：2026年第三季度</span>
+ </div>
+ <div class="flex items-center space-x-3 font-mono">
+ <span>总市值：~$171.9亿</span>
+ <span>标的数：16只</span>
+ </div>
+ </div>
+
+ <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy-900 via-navy-800 to-slate-900 text-white p-6 sm:p-10 shadow-xl border border-slate-700/70">
+ <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#F59E0B 1.2px, transparent 1.2px); background-size: 24px 24px;"></div>
+ <div class="relative z-10">
+ <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-300 text-xs font-semibold mb-4">
+ <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+ <span>Q3 CORE TAKEAWAYS · 苹果与伯克希尔占2/3江山 · 减持英伟达/清仓阿里 · 重仓增持拼多多/特斯拉 · 新进SpaceX</span>
+ </div>
+ <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight text-white">
+ 段永平 2026Q3 美股持仓深度分析报告：极致集中的巴菲特式骨架与顺应现金流的动态微调
+ </h1>
+ <p class="mt-4 text-sm sm:text-base text-slate-300 max-w-4xl leading-relaxed">
+ 当地时间2026年11月16日，知名投资人段永平旗下 <strong class="text-white">H&H International Investment</strong> 披露了最新 2026 年三季度 13F 美股持仓报告。截至三季度末，其美股持仓总市值约为 <strong class="text-gold-300">171.91 亿美元</strong>（较二季度的 191 亿美元有所回落），持仓标的精简至 <strong class="text-white">16 只</strong>。
+ 组合延续了极高的集中度：<strong class="text-white">苹果（AAPL）</strong>与<strong class="text-white">伯克希尔·哈撒韦（BRK.B）</strong>前两大重仓股合计权重高达 <strong class="text-emerald-400">65%</strong>。调仓方面，最受瞩目的动作是<strong class="text-rose-400">大幅减持英伟达（降幅超60%）并清仓阿里巴巴</strong>；同时，<strong class="text-emerald-400">拼多多与特斯拉获得显著加仓</strong>，升居第三、四大重仓，并<strong class="text-gold-300">新进试探性布局 SpaceX</strong>。
+ </p>
+
+ <div class="mt-6 pt-6 border-t border-slate-700/80 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+ <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+ <div class="text-slate-400 font-medium mb-1">压舱石稳如磐石</div>
+ <div class="text-white font-semibold">苹果占 41.07% ($70.6B) 领衔，伯克希尔占 24.2% ($41.6B)，总计占据组合三分之二江山</div>
+ </div>
+ <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+ <div class="text-slate-400 font-medium mb-1">科技龙头大相径庭</div>
+ <div class="text-rose-400 font-semibold">英伟达遭遇大幅度减持（减幅超63%），谷歌亦被减仓，反映估值兑现与期权对冲逻辑</div>
+ </div>
+ <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+ <div class="text-slate-400 font-medium mb-1">坚定加码电商与新能源</div>
+ <div class="text-emerald-400 font-semibold">拼多多获大幅增持升至第3大重仓 (12.69%)，特斯拉升至第4大重仓 (8.42%)</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- 四大核心 KPI 卡片 -->
+ <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-6">
+ <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+ <div class="flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
+ <span>总持仓市值</span>
+ <span class="p-1.5 rounded-lg bg-gold-500/15 text-gold-600 dark:text-gold-400 font-mono">13F</span>
+ </div>
+ <div class="mt-3 flex items-baseline space-x-2">
+ <span class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono">$171.9B</span>
+ <span class="text-xs font-bold text-slate-500 dark:text-slate-400">16只标的</span>
+ </div>
+ <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+ 剔除了港股、A股、现金储备及期权/空头头寸后的美股多头总市值。
+ </p>
+ </div>
+
+ <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+ <div class="flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
+ <span>组合集中度 (Top 2)</span>
+ <span class="p-1.5 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-mono">Apple + BRK</span>
+ </div>
+ <div class="mt-3 flex items-baseline space-x-2">
+ <span class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono">> 65.0%</span>
+ <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/15 px-2 py-0.5 rounded">绝对压舱石</span>
+ </div>
+ <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+ 苹果占 41.07%、伯克希尔占 24.2%，延续了极简且高度集中的巴菲特式风格。
+ </p>
+ </div>
+
+ <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+ <div class="flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
+ <span>大动作：英伟达 & 阿里</span>
+ <span class="p-1.5 rounded-lg bg-rose-500/15 text-rose-600 dark:text-rose-400 font-mono">减持 / 清仓</span>
+ </div>
+ <div class="mt-3 flex items-baseline space-x-2">
+ <span class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono">-63.1%</span>
+ <span class="text-xs font-bold text-rose-600 dark:text-rose-400 bg-rose-500/15 px-2 py-0.5 rounded">清仓阿里</span>
+ </div>
+ <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+ 英伟达遭大幅减持 396 万股（占比由 6.58% 降至 3.08%），阿里 30 万股持仓全部清零。
+ </p>
+ </div>
+
+ <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+ <div class="flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
+ <span>加仓与新进核心</span>
+ <span class="p-1.5 rounded-lg bg-teal-500/15 text-teal-600 dark:text-teal-400 font-mono">PDD / TSLA</span>
+ </div>
+ <div class="mt-3 flex items-baseline space-x-2">
+ <span class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono">12.69%</span>
+ <span class="text-xs font-bold text-teal-600 dark:text-teal-400 bg-teal-500/15 px-2 py-0.5 rounded">新进 SpaceX</span>
+ </div>
+ <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+ 拼多多增持升至第 3 大重仓（12.69%），特斯拉升至第 4 大重仓（8.42%），并试探性建仓 SpaceX。
+ </p>
+ </div>
+ </div>
+ </section>
+
+ <!-- =========================================================
+ 01. 压舱石：苹果与伯克希尔·哈撒韦
+ ========================================================= -->
+ <section id="sec-anchor" class="scroll-mt-20 space-y-6">
+ <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+ <div>
+ <span class="text-xs font-bold uppercase tracking-wider text-gold-600 dark:text-gold-400">Section 01 · Core Anchors (AAPL & BRK.B)</span>
+ <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">一、 压舱石稳如磐石：苹果占 41% 与伯克希尔占 24%，构筑组合绝对底座</h2>
+ </div>
+ <span class="text-xs text-slate-500 dark:text-slate-400">前两大重仓合计市值 ~$112.2B</span>
+ </div>
+
+ <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+ <div class="lg:col-span-7 bg-white dark:bg-navy-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+ <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2">2026Q3 段永平组合前十大重仓股分布与权重占比</h3>
+ <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">延续高度集中的巴菲特式配置：苹果与伯克希尔占据绝对统治地位</p>
+ <div class="relative h-72 w-full">
+ <canvas id="topHoldingsChart"></canvas>
+ </div>
+ </div>
+
+ <div class="lg:col-span-5 space-y-4">
+ <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+ <div class="flex items-center space-x-2.5 mb-2">
+ <span class="w-7 h-7 rounded-lg bg-gold-500/15 text-gold-600 dark:text-gold-400 flex items-center justify-center font-bold text-xs">01</span>
+ <h3 class="font-bold text-slate-900 dark:text-white text-sm">苹果 (AAPL)：持仓市值为 $70.61 亿，占比 41.07%</h3>
+ </div>
+ <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+ 尽管三季度有小幅减持（约减持 589 万股），苹果依然无可争议地占据段永平组合的头号交椅。在段永平眼中，苹果无与伦比的消费端生态、极高的用户粘性和恐怖的自由现金流创造能力，是任何通胀或周期风浪中都不可动摇的“终极商业模式”。
+ </p>
+ </div>
+
+ <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+ <div class="flex items-center space-x-2.5 mb-2">
+ <span class="w-7 h-7 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xs">02</span>
+ <h3 class="font-bold text-slate-900 dark:text-white text-sm">伯克希尔·哈撒韦 (BRK.B)：持仓 $41.61 亿，占比 24.20%</h3>
+ </div>
+ <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+ 作为精神导师巴菲特的旗舰帝国，伯克希尔扎实的多元化保险与工业资产、庞大的现金储备提供了终极的安全边际。两只大牛股加起来占了整个投资组合的近 65%，展现出极强的抗风险定力。
+ </p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- =========================================================
+ 02. 科技股分化：减持英伟达与谷歌，清仓阿里
+ ========================================================= -->
+ <section id="sec-tech" class="scroll-mt-20 space-y-6">
+ <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+ <div>
+ <span class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Section 02 · Tech Divergence (NVDA & BABA)</span>
+ <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">二、 科技股分化：大幅减持英伟达与谷歌，坚决清仓阿里巴巴</h2>
+ </div>
+ <span class="text-xs text-slate-500 dark:text-slate-400">期权对冲与商业模式清晰度考验</span>
+ </div>
+
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+ <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-rose-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+ <div>
+ <div class="flex items-center justify-between mb-2">
+ <span class="px-2.5 py-0.5 rounded bg-rose-500/15 text-rose-600 dark:text-rose-400 text-xs font-bold">英伟达 (NVDA) 深度复盘</span>
+ <span class="font-mono text-xs font-bold text-rose-600 dark:text-rose-400">减持 63.1%</span>
+ </div>
+ <div class="text-xl font-extrabold font-mono text-slate-900 dark:text-white mt-2">持仓占比由 6.58% 降至 3.08%</div>
+ <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+ 三季度英伟达遭到大幅减持（减少 396.12 万股）。但段永平近期公开回应表明：这不代表看空，其“护城河和需求依然很强”，减持一方面可能与期权操作（如卖出 Puts / 股票被 Call 走）有关，另一方面也体现了高位兑现纪律。
+ </p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-rose-600 dark:text-rose-400">
+ 评价：“不看空但暂时不加码，价格合适会买回”
+ </div>
+ </div>
+
+ <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-amber-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+ <div>
+ <div class="flex items-center justify-between mb-2">
+ <span class="px-2.5 py-0.5 rounded bg-amber-500/15 text-amber-700 dark:text-amber-400 text-xs font-bold">谷歌 (Alphabet)</span>
+ <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">小幅减仓</span>
+ </div>
+ <div class="text-xl font-extrabold font-mono text-slate-900 dark:text-white mt-2">维持核心 AI & Search 观察</div>
+ <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+ 谷歌作为全球搜索与 AI 双寡头之一，虽然仍位列前十大重仓（第7位），但在三季度遭到例行调仓减持。段永平对其广告现金流底座保持认可，但对 AI 资本开支回报率保持高度审慎。
+ </p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-amber-600 dark:text-amber-400">
+ 动态跟踪：搜索护城河与云业务利润
+ </div>
+ </div>
+
+ <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-slate-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+ <div>
+ <div class="flex items-center justify-between mb-2">
+ <span class="px-2.5 py-0.5 rounded bg-slate-500/15 text-slate-700 dark:text-slate-300 text-xs font-bold">阿里巴巴 (BABA)</span>
+ <span class="font-mono text-xs font-bold text-slate-600 dark:text-slate-400">完全清仓</span>
+ </div>
+ <div class="text-xl font-extrabold font-mono text-slate-900 dark:text-white mt-2">持仓归零 (此前持约 30 万股)</div>
+ <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+ 继二季度持有约 30.14 万股后，段永平在三季度将阿里巴巴彻底清仓。尽管其一直对马云的企业家精神赞赏有加，但电商行业竞争加剧、AI 云重投入削弱短期自由现金流，使该生意的“清晰度在下降”。
+ </p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-400">
+ 原则：“当竞争优势不再突出，持有就是错误的”
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- =========================================================
+ 03. 增持与新进：拼多多、特斯拉与 SpaceX
+ ========================================================= -->
+ <section id="sec-growth" class="scroll-mt-20 space-y-6">
+ <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+ <div>
+ <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Section 03 · Additions & New Positions (PDD, TSLA, SpaceX)</span>
+ <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">三、 坚定加仓与前沿试探：拼多多升至第3大重仓，特斯拉加码，新进 SpaceX</h2>
+ </div>
+ <span class="text-xs text-slate-500 dark:text-slate-400">“看得懂、护城河极深”的商业模式延展</span>
+ </div>
+
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+ <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-emerald-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+ <div>
+ <div class="flex items-center justify-between mb-2">
+ <span class="px-2.5 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-xs font-bold">拼多多 (PDD)</span>
+ <span class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">大举增持 297万股</span>
+ </div>
+ <div class="text-xl font-extrabold font-mono text-slate-900 dark:text-white mt-2">持仓占比升至 12.69% (第3大)</div>
+ <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+ 拼多多是三季度加仓力度最大的标的（增持 296.88 万股，市值达 $21.8 亿）。过去 7 个季度中有 6 个季度在持续加仓。从最初“看不懂模式只信黄峥”，到如今认可其强悍的供应链效率与消费者口碑，拼多多已坐稳其核心重仓。
+ </p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+ 逻辑：极致的性价比与消费者真实好评护城河
+ </div>
+ </div>
+
+ <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-gold-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+ <div>
+ <div class="flex items-center justify-between mb-2">
+ <span class="px-2.5 py-0.5 rounded bg-gold-500/15 text-gold-700 dark:text-gold-400 text-xs font-bold">特斯拉 (TSLA)</span>
+ <span class="font-mono text-xs font-bold text-gold-600 dark:text-gold-400">增持 69.96万股</span>
+ </div>
+ <div class="text-xl font-extrabold font-mono text-slate-900 dark:text-white mt-2">持仓占比升至 8.42% (第4大)</div>
+ <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+ 特斯拉在三季度股价震荡之际再获加仓。段永平曾坦言虽然“对马斯克的品行不感冒”，但完全认同其底层逻辑：“人的视觉能解决的问题，理论上 AI 都能解决，且会解决得更好，全自动驾驶 FSD 是时间问题。”
+ </p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-gold-700 dark:text-gold-400">
+ 逻辑：FSD 与人形机器人带来的 AI 终局想象力
+ </div>
+ </div>
+
+ <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-teal-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+ <div>
+ <div class="flex items-center justify-between mb-2">
+ <span class="px-2.5 py-0.5 rounded bg-teal-500/15 text-teal-600 dark:text-teal-400 text-xs font-bold">SpaceX</span>
+ <span class="font-mono text-xs font-bold text-teal-600 dark:text-teal-400">全新试探性建仓</span>
+ </div>
+ <div class="text-xl font-extrabold font-mono text-slate-900 dark:text-white mt-2">极小仓位新进布局</div>
+ <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+ 三季度 H&H 组合新进了全球商业航天垄断巨头 SpaceX。尽管当前在 13F 中披露的市值占比较小，但显示出段永平对马斯克旗下另一张王牌——星链与火星航天基础设施垄断地位的高度认可。
+ </p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-teal-600 dark:text-teal-400">
+ 逻辑：稀缺太空资产与绝对技术壁垒试探
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- =========================================================
+ 04. 深度复盘：段永平投资哲学与持仓启示
+ ========================================================= -->
+ <section id="sec-philosophy" class="scroll-mt-20 space-y-6">
+ <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+ <div>
+ <span class="text-xs font-bold uppercase tracking-wider text-gold-600 dark:text-gold-400">Section 04 · Investment Philosophy & Takeaways</span>
+ <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">四、 深度复盘：从 2026Q3 调仓透视段永平的“买股票就是买公司”</h2>
+ </div>
+ <span class="text-xs text-slate-500 dark:text-slate-400">巴菲特衣钵的中国本土化实践</span>
+ </div>
+
+ <div class="bg-gradient-to-br from-navy-900 via-navy-800 to-slate-900 rounded-2xl p-6 sm:p-8 text-white border border-slate-700 shadow-xl space-y-6">
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <div class="bg-white/5 rounded-xl p-5 border border-white/10">
+ <h3 class="font-bold text-gold-400 text-base mb-2">1. 极简的集中投资与能力圈边界</h3>
+ <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+ 截至三季度末，前两大重仓（苹果+伯克希尔）占了 65%，前五大重仓占了近 90%。段永平用实际行动诠释了“把鸡蛋放在少数几个看得懂的篮子里，并看好它”。当对一家公司的商业模式清晰度下降（如阿里）时，果断归零，绝不拖泥带水。
+ </p>
+ </div>
+
+ <div class="bg-white/5 rounded-xl p-5 border border-white/10">
+ <h3 class="font-bold text-emerald-400 text-base mb-2">2. 商业模式至上：自由现金流与护城河</h3>
+ <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+ 无论是苹果的超级生态、拼多多的极致供应链，还是特斯拉的 FSD 降维打击，段永平的核心评估标准始终没有变：这家公司未来能否源源不断地产出自由现金流？其商业壁垒是否在加宽？
+ </p>
+ </div>
+ </div>
+
+ <div class="pt-4 border-t border-slate-700/80 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-slate-400">
+ <span>数据来源：美国 SEC 13F 官方备案文件 (H&H International Investment, LLC)</span>
+ <span class="text-gold-300 font-semibold mt-1 sm:mt-0">“做对的事情，把事情做对”</span>
+ </div>
+ </div>
+ </section>
+
+ <footer class="pt-8 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-2 pb-10">
+ <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-semibold text-slate-700 dark:text-slate-300">
+ <span>段永平旗下 H&H International Investment 2026Q3 美股持仓深度分析报告</span>
+ <span>数据基准：2026年三季度 13F 申报文件</span>
+ </div>
+ <p class="leading-relaxed">
+ <strong>免责声明：</strong>本报告基于公开的 13F 机构持仓数据及段永平公开言论整理生成，旨在提供客观的投资研究框架与商业分析，不构成任何证券买卖建议或投资决策承诺。13F 报告仅反映美股多头持仓，不包含期权、港股及现金等其他资产。
+ </p>
+ </footer>
+
+ </div>
+ </main>
+
+ <script>
+ function toggleTheme() {
+ document.documentElement.classList.toggle('dark');
+ initTopHoldingsChart();
+ }
+
+ function toggleMobileMenu() {
+ document.getElementById('mobile-drawer').classList.toggle('hidden');
+ }
+
+ window.addEventListener('scroll', () => {
+ const scrollTop = window.scrollY;
+ const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+ const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+ document.getElementById('reading-progress').style.width = `${Math.min(100, Math.max(0, scrollPercent))}%`;
+ });
+
+ let topHoldingsChartInstance = null;
+
+ function initTopHoldingsChart() {
+ const ctx = document.getElementById('topHoldingsChart').getContext('2d');
+ const isDark = document.documentElement.classList.contains('dark');
+ const textColor = isDark ? '#CBD5E1' : '#475569';
+ const gridColor = isDark ? 'rgba(51, 65, 85, 0.5)' : 'rgba(226, 232, 240, 0.85)';
+
+ if (topHoldingsChartInstance) topHoldingsChartInstance.destroy();
+
+ topHoldingsChartInstance = new Chart(ctx, {
+ type: 'bar',
+ data: {
+ labels: [
+ '苹果 (AAPL)',
+ '伯克希尔·哈撒韦 (BRK.B)',
+ '拼多多 (PDD)',
+ '特斯拉 (TSLA)',
+ '西方石油 (OXY)',
+ '英伟达 (NVDA)',
+ '谷歌 (GOOGL)',
+ '微软 (MSFT)',
+ '迪士尼 (DIS)',
+ '联合健康 (UNH)'
+ ],
+ datasets: [
+ {
+ label: '持仓权重占比 (%)',
+ data: [41.07, 24.20, 12.69, 8.42, 3.30, 3.08, 2.50, 1.80, 1.20, 0.84],
+ backgroundColor: [
+ '#F59E0B', '#10B981', '#06B6D4', '#6366F1', '#EC4899',
+ '#8B5CF6', '#3B82F6', '#14B8A6', '#F97316', '#64748B'
+ ],
+ borderRadius: 6,
+ barThickness: 18
+ }
+ ]
+ },
+ options: {
+ indexAxis: 'y',
+ responsive: true,
+ maintainAspectRatio: false,
+ plugins: {
+ legend: { display: false },
+ tooltip: {
+ callbacks: {
+ label: (ctx) => `持仓权重: ${ctx.parsed.x}%`
+ }
+ }
+ },
+ scales: {
+ x: {
+ max: 45,
+ grid: { color: gridColor },
+ ticks: { color: textColor, font: { size: 11 }, callback: v => v + '%' }
+ },
+ y: {
+ grid: { display: false },
+ ticks: { color: textColor, font: { size: 11, weight: '600' } }
+ }
+ }
+ }
+ });
+ }
+
+ window.addEventListener('DOMContentLoaded', () => {
+ initTopHoldingsChart();
+ });
+ </script>
+</body>
+</html>

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>段永平旗下 H&H International Investment 2026年三季度美股持仓深度研报</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'Noto Sans SC', 'system-ui', '-apple-system', 'sans-serif'],
+                    mono: ['JetBrains Mono', 'monospace'],
+                },
+                colors: {
+                    navy: {
+                        950: '#070B14',
+                        900: '#0F172A',
+                        800: '#1E293B',
+                        700: '#334155',
+                    },
+                    mogold: {
+                        300: '#FCD34D',
+                        400: '#FBBF24',
+                        500: '#F59E0B',
+                        600: '#D97706',
+                        700: '#B45309',
+                    }
+                }
+            }
+        }
+    }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #94A3B8; border-radius: 3px; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+
+        @media print {
+            #sidebar, #mobile-header, #theme-toggle-btn, .no-print { display: none !important; }
+            main { margin-left: 0 !important; padding: 0 !important; }
+            section { break-inside: avoid; }
+        }
+
+        .report-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .report-card:hover { transform: translateY(-2px); }
+
+        .nav-link.active {
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.24) 0%, rgba(16, 185, 129, 0.06) 100%);
+            border-left: 3px solid #F59E0B;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#1E293B] dark:bg-navy-950 dark:text-slate-100 antialiased selection:bg-mogold-500 selection:text-navy-950 transition-colors duration-200">
+
+    <!-- 顶部阅读进度条 -->
+    <div class="fixed top-0 left-0 right-0 h-1 z-50 bg-slate-200/70 dark:bg-navy-800">
+        <div id="reading-progress" class="h-full bg-gradient-to-r from-mogold-600 via-mogold-400 to-emerald-500 w-0 transition-all duration-150"></div>
+    </div>
+
+    <!-- 移动端顶部导航 -->
+    <header id="mobile-header" class="lg:hidden sticky top-0 z-40 bg-navy-900 text-white border-b border-slate-800 px-4 py-3 flex items-center justify-between shadow-md">
+        <div class="flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-mogold-400 to-mogold-600 flex items-center justify-center font-extrabold text-navy-950 text-xs shadow">
+                H&H
+            </div>
+            <div>
+                <div class="text-[11px] text-mogold-400 font-semibold tracking-wider uppercase">H&H International · Q3 2026</div>
+                <div class="text-sm font-bold leading-tight">段永平美股持仓深度研报</div>
+            </div>
+        </div>
+        <div class="flex items-center space-x-2">
+            <button onclick="toggleTheme()" class="p-2 rounded-lg bg-navy-800 hover:bg-navy-700 text-slate-300" aria-label="切换主题">
+                <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </button>
+            <button onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-navy-800 hover:bg-navy-700 text-white" aria-label="菜单">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- 移动端抽屉菜单 -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 hidden lg:hidden">
+        <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm" onclick="toggleMobileMenu()"></div>
+        <nav class="relative w-72 max-w-[80vw] h-full bg-navy-900 text-slate-300 flex flex-col justify-between p-5 overflow-y-auto shadow-2xl">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                    <span class="font-bold text-white text-base">研报导航目录</span>
+                    <button onclick="toggleMobileMenu()" class="p-1.5 rounded-lg text-slate-400 hover:text-white">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+                <ul class="mt-4 space-y-1.5 text-sm">
+                    <li><a href="#sec-overview" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">00. 核心总览与组合全貌</a></li>
+                    <li><a href="#sec-top4" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">01. 四大核心重仓深度解析</a></li>
+                    <li><a href="#sec-matrix" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">02. 16只标的全景持仓明细</a></li>
+                    <li><a href="#sec-actions" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">03. 增减持与清仓动态复盘</a></li>
+                    <li><a href="#sec-strategy" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">04. 价值投资逻辑与启示</a></li>
+                </ul>
+            </div>
+            <div class="pt-4 border-t border-slate-800 text-xs text-slate-400">
+                <p>H&H International Investment 13F 跟踪研究组</p>
+                <p class="mt-1">数据基准：2026年三季度末 (Q3 2026)</p>
+            </div>
+        </nav>
+    </div>
+
+    <!-- 桌面端左侧固定侧边栏 -->
+    <aside id="sidebar" class="hidden lg:flex fixed top-0 left-0 bottom-0 w-[280px] bg-[#0F172A] text-slate-300 flex-col justify-between border-r border-slate-800 z-30 select-none">
+        <div>
+            <div class="p-5 border-b border-slate-800/80">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mogold-400 via-mogold-500 to-mogold-600 flex items-center justify-center text-navy-950 font-extrabold text-base shadow-lg shadow-mogold-500/25">
+                        H&H
+                    </div>
+                    <div>
+                        <span class="inline-block text-[10px] font-bold tracking-widest uppercase text-mogold-400 bg-mogold-500/15 px-2 py-0.5 rounded">SEC 13F 专栏</span>
+                        <h2 class="text-white font-bold text-base mt-0.5 tracking-tight">段永平持仓研报</h2>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                    H&H International Investment 2026年三季度美股公开投资组合深度剖析
+                </p>
+            </div>
+
+            <div class="px-5 py-3 bg-navy-950/70 border-b border-slate-800/80 space-y-1.5 text-xs">
+                <div class="flex items-center justify-between">
+                    <span class="text-slate-400">公开持仓总市值</span>
+                    <span class="font-mono font-bold text-white">$171.91 亿</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-slate-400">持仓标的数</span>
+                    <span class="font-mono font-bold text-emerald-400">16 只</span>
+                </div>
+                <div class="flex items-center justify-between pt-1 border-t border-slate-800/70">
+                    <span class="text-slate-400">前四大重仓占比</span>
+                    <span class="font-mono font-bold text-mogold-400">86.4%</span>
+                </div>
+            </div>
+
+            <div class="px-3 py-3.5 overflow-y-auto max-h-[calc(100vh-310px)]">
+                <div class="px-3 mb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">报告章节导航</div>
+                <nav id="desktop-nav" class="space-y-1 text-[13px]">
+                    <a href="#sec-overview" data-target="sec-overview" class="nav-link active flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+                        <span><span class="text-xs font-mono text-mogold-400 mr-2">00</span>核心总览与组合全貌</span>
+                    </a>
+                    <a href="#sec-top4" data-target="sec-top4" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+                        <span><span class="text-xs font-mono text-slate-500 mr-2">01</span>四大核心重仓深度解析</span>
+                    </a>
+                    <a href="#sec-matrix" data-target="sec-matrix" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+                        <span><span class="text-xs font-mono text-slate-500 mr-2">02</span>16只标的全景持仓明细</span>
+                    </a>
+                    <a href="#sec-actions" data-target="sec-actions" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+                        <span><span class="text-xs font-mono text-slate-500 mr-2">03</span>增减持与清仓动态复盘</span>
+                    </a>
+                    <a href="#sec-strategy" data-target="sec-strategy" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+                        <span><span class="text-xs font-mono text-slate-500 mr-2">04</span>价值投资逻辑与启示</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="p-4 border-t border-slate-800/80 bg-navy-950/50 space-y-2.5">
+            <div class="flex items-center justify-between">
+                <span class="text-xs text-slate-400">阅读模式切换</span>
+                <button id="theme-toggle-btn" onclick="toggleTheme()" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-xs font-medium text-slate-200 border border-slate-700 transition cursor-pointer">
+                    <svg class="w-3.5 h-3.5 text-mogold-400 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <svg class="w-3.5 h-3.5 text-mogold-500 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    <span class="dark:hidden">深色护眼模式</span>
+                    <span class="hidden dark:inline">机构亮色模式</span>
+                </button>
+            </div>
+            <button onclick="window.print()" class="w-full flex items-center justify-center space-x-2 py-2 px-3 rounded-lg bg-gradient-to-r from-mogold-500 to-mogold-600 hover:from-mogold-600 hover:to-mogold-700 text-navy-950 text-xs font-extrabold transition shadow-sm cursor-pointer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                <span>打印 / 导出网页为 PDF</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main class="lg:ml-[280px] min-h-screen">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8 py-8 lg:py-12 space-y-12">
+
+            <!-- =========================================================
+            00. 封面与核心总览
+            ========================================================= -->
+            <section id="sec-overview" class="scroll-mt-20">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs text-slate-500 dark:text-slate-400">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="px-2.5 py-1 rounded-md bg-mogold-500/15 text-mogold-700 dark:text-mogold-400 font-bold border border-mogold-500/30">机构：H&H International Investment, LLC</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-200/70 dark:bg-navy-800 text-slate-700 dark:text-slate-300 font-medium">披露周期：2026年三季度 (Q3 13F)</span>
+                    </div>
+                    <div class="flex items-center space-x-3 font-mono">
+                        <span>美股公开持仓总市值：$171.91 亿</span>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy-900 via-navy-800 to-slate-900 text-white p-6 sm:p-10 shadow-xl border border-slate-700/70">
+                    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#F59E0B 1.2px, transparent 1.2px); background-size: 24px 24px;"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-mogold-500/20 border border-mogold-400/40 text-mogold-300 text-xs font-semibold mb-4">
+                            <span class="w-2 h-2 rounded-full bg-mogold-400 animate-pulse"></span>
+                            <span>PORTFOLIO REVIEW · 苹果稳居第一大重仓 × 拼多多与特斯拉显著加仓 × 新进 SpaceX 清仓阿里</span>
+                        </div>
+                        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight text-white">
+                            段永平旗下 H&H International Investment 截至 2026 年三季度美股公开持仓深度研报
+                        </h1>
+                        <p class="mt-4 text-sm sm:text-base text-slate-300 max-w-4xl leading-relaxed">
+                            根据美国 SEC 最新披露的 13F 季报，段永平旗下的 <strong class="text-white">H&H International Investment</strong> 在 2026 年第三季度末的公开美股持仓总市值达到 <strong class="text-mogold-300">$171.91 亿美元</strong>，共持有 <strong class="text-white">16 只</strong>标的。本季度操作亮点纷呈：<strong class="text-white">苹果（AAPL）</strong>以 41% 占比稳如磐石；对 <strong class="text-emerald-400">拼多多（PDD，13%）</strong> 与 <strong class="text-emerald-400">特斯拉（TSLA，8.4%）</strong> 进行了明显的加仓；同时重磅新进长线未上市布局代表 <strong class="text-white">SpaceX</strong>，大幅减持英伟达（NVDA），并对中概股 <strong class="text-rose-400">阿里巴巴（BABA）</strong> 实现了完全清仓。
+                        </p>
+
+                        <div class="mt-6 pt-6 border-t border-slate-700/80 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+                            <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                                <div class="text-slate-400 font-medium mb-1">前四大重仓集中度</div>
+                                <div class="text-white font-semibold">苹果(41%) + 伯克希尔(24%) + 拼多多(13%) + 特斯拉(8.4%) = 86.4%</div>
+                            </div>
+                            <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                                <div class="text-slate-400 font-medium mb-1">重点加仓方向</div>
+                                <div class="text-emerald-400 font-semibold">拼多多、特斯拉获明显增持，新进 SpaceX，展现出极致的商业模式信仰</div>
+                            </div>
+                            <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                                <div class="text-slate-400 font-medium mb-1">主要减仓与清仓</div>
+                                <div class="text-rose-400 font-semibold">英伟达遭遇大幅减持，阿里巴巴彻底清仓退出前十大</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4个核心指标卡片 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-6">
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400">公开持仓总市值</div>
+                        <div class="mt-3 flex items-baseline space-x-2">
+                            <span class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono">$171.91B</span>
+                            <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/15 px-2 py-0.5 rounded">Q3 2026</span>
+                        </div>
+                        <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">涵盖美股多头公开披露资产，不含港股腾讯及A股茅台。</p>
+                    </div>
+
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400">持仓标的数量</div>
+                        <div class="mt-3 flex items-baseline space-x-2">
+                            <span class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono">16 只</span>
+                            <span class="text-xs font-bold text-mogold-700 dark:text-mogold-400 bg-mogold-500/15 px-2 py-0.5 rounded">精简聚焦</span>
+                        </div>
+                        <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">坚持“懂什么买什么”原则，组合保持高度集中。</p>
+                    </div>
+
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400">第一大重仓：苹果 (AAPL)</div>
+                        <div class="mt-3 flex items-baseline space-x-2">
+                            <span class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono">41.0%</span>
+                            <span class="text-xs font-bold text-teal-600 dark:text-teal-400 bg-teal-500/15 px-2 py-0.5 rounded">核心压舱石</span>
+                        </div>
+                        <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">生态壁垒与巨额股份回购构筑长期价值底座。</p>
+                    </div>
+
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400">加仓与清仓动作</div>
+                        <div class="mt-3 flex items-baseline space-x-2">
+                            <span class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">PDD/TSLA</span>
+                            <span class="text-xs font-bold text-rose-600 dark:text-rose-400 bg-rose-500/15 px-2 py-0.5 rounded">清仓阿里</span>
+                        </div>
+                        <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">拼多多与特斯拉显著加仓，清仓阿里并大幅减持英伟达。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================================
+            01. 四大核心重仓深度解析
+            ========================================================= -->
+            <section id="sec-top4" class="scroll-mt-20 space-y-6">
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-mogold-600 dark:text-mogold-400">Section 01 · Top 4 Heavyweight Holdings</span>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">一、 四大核心重仓深度解析：占据组合 86.4% 的商业帝国堡垒</h2>
+                    </div>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">组合前四大资产总市值占比高达 86.4%</span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    <!-- 左侧：图表展示 -->
+                    <div class="lg:col-span-6 bg-white dark:bg-navy-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1">H&H 资产权重分布与前四大重仓结构</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">苹果(41%)、伯克希尔(24%)、拼多多(13%)、特斯拉(8.4%)</p>
+                        <div class="relative h-72 w-full">
+                            <canvas id="portfolioPieChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- 右侧：核心要点 -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <div class="bg-white dark:bg-navy-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-bold text-slate-900 dark:text-white text-sm">1. 苹果 (AAPL) —— 绝对第一大重仓 (41%)</span>
+                                <span class="text-xs font-mono font-bold text-mogold-600 dark:text-mogold-400">核心压舱石</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                自 2011 年买入以来，苹果一直是段永平美股组合中的“定海神针”。其极宽的生态系统护城河、极高的用户粘性以及每年持续大规模的回购注销，完美契合段永平“买股票就是买公司”的长期价值投资理念。
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-navy-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-bold text-slate-900 dark:text-white text-sm">2. 伯克希尔·哈撒韦 B股 (BRK.B) —— 第二大重仓 (24%)</span>
+                                <span class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">安全边际</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                作为巴菲特的长期信徒，段永平将伯克希尔视为极其稳健的“现金替代品”与复利机器。其庞大的多元化实体业务矩阵和充足的账面现金，在宏观波动期为组合提供了顶级的安全垫。
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-navy-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-bold text-slate-900 dark:text-white text-sm">3. 拼多多 (PDD) —— 第三大重仓 (13%) 获明显加仓</span>
+                                <span class="text-xs font-mono font-bold text-teal-600 dark:text-teal-400">高增长商业模式</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                段永平对拼多多的商业模式（Cost-effective、供应链效率及 Temu 全球化）给予过极高评价。本季度再度获得明显加仓，表明其对拼多多长期自由现金流折现及全球化零售竞争力的坚定看好。
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-navy-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-bold text-slate-900 dark:text-white text-sm">4. 特斯拉 (TSLA) —— 第四大重仓 (8.4%) 获明显加仓</span>
+                                <span class="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400">AI 与能源远景</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                                继此前建仓后，本季度特斯拉获进一步明显加仓，权重攀升至 8.4%。段永平看重特斯拉在电动车制造、FSD（完全自动驾驶）AI 神经网络以及储能业务上展现出的颠覆性远景。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================================
+            02. 16只标的全景持仓明细表
+            ========================================================= -->
+            <section id="sec-matrix" class="scroll-mt-20 space-y-6">
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Section 02 · Full Portfolio Holdings Matrix</span>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">二、 H&H International Investment 截至 2026Q3 的 16 只标的全景明细表</h2>
+                    </div>
+                    <div class="flex items-center space-x-2 text-xs">
+                        <span class="px-2.5 py-1 rounded bg-mogold-500/15 text-mogold-700 dark:text-mogold-400 font-bold">总计 16 只标的</span>
+                    </div>
+                </div>
+
+                <!-- 持仓数据表格 -->
+                <div class="bg-white dark:bg-navy-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100/80 dark:bg-navy-800/80 border-b border-slate-200 dark:border-slate-700 text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+                                    <th class="py-4 px-5 min-w-[60px]">序号</th>
+                                    <th class="py-4 px-5 min-w-[180px]">公司名称与代码</th>
+                                    <th class="py-4 px-4 min-w-[130px]">组合权重</th>
+                                    <th class="py-4 px-4 min-w-[140px]">持股市值 (估算)</th>
+                                    <th class="py-4 px-4 min-w-[150px]">本季度操作状态</th>
+                                    <th class="py-4 px-5 min-w-[280px]">投资逻辑与商业模式点评</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm">
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">01</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">苹果 <span class="text-xs font-mono font-normal text-slate-500">(AAPL)</span></td>
+                                    <td class="py-3.5 px-4 font-mono font-bold text-mogold-600 dark:text-mogold-400">41.0%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$70.48B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">稳定持仓</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">绝对第一大重仓，生态系统护城河极深，持续回购注销股本。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">02</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">伯克希尔·哈撒韦B <span class="text-xs font-mono font-normal text-slate-500">(BRK.B)</span></td>
+                                    <td class="py-3.5 px-4 font-mono font-bold text-slate-900 dark:text-white">24.0%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$41.26B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">稳定持仓</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">核心压舱石，现金替代品，极度稳健的多元化复利机器。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">03</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">拼多多 <span class="text-xs font-mono font-normal text-slate-500">(PDD)</span></td>
+                                    <td class="py-3.5 px-4 font-mono font-bold text-emerald-600 dark:text-emerald-400">13.0%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$22.35B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">明显加仓</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">高效的供应链商业模式与 Temu 全球化驱动，本季获明显增持。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">04</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">特斯拉 <span class="text-xs font-mono font-normal text-slate-500">(TSLA)</span></td>
+                                    <td class="py-3.5 px-4 font-mono font-bold text-emerald-600 dark:text-emerald-400">8.4%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$14.44B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">明显加仓</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">看好电动车、FSD 自动驾驶 AI 网络与储能业务的颠覆性远景。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">05</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">西方石油 <span class="text-xs font-mono font-normal text-slate-500">(OXY)</span></td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-700 dark:text-slate-300">~3.5%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$6.02B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">常规配置</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">跟随巴菲特步伐，看重油气资产的强大现金流与股息回报能力。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">06</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">英伟达 <span class="text-xs font-mono font-normal text-slate-500">(NVDA)</span></td>
+                                    <td class="py-3.5 px-4 font-mono text-rose-600 dark:text-rose-400">~2.2%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$3.78B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-400">大幅减持</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">AI 算力龙头，因前期涨幅过大及估值考量在本季遭遇大幅减持。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">07</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">谷歌-A <span class="text-xs font-mono font-normal text-slate-500">(GOOGL)</span></td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-700 dark:text-slate-300">~2.0%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$3.44B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">持有 / 稳健</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">搜索广告统治力与 AI 商业化应用兼备，商业模式极佳。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">08</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">微软 <span class="text-xs font-mono font-normal text-slate-500">(MSFT)</span></td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-700 dark:text-slate-300">~1.2%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$2.06B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">常规配置</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">企业级软件与云服务垄断地位，现金流极为充沛。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">09</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">迪士尼 <span class="text-xs font-mono font-normal text-slate-500">(DIS)</span></td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-700 dark:text-slate-300">~0.6%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$1.03B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">常规配置</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">全球顶级IP资产组合与主题乐园生态。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">10</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">联合健康 <span class="text-xs font-mono font-normal text-slate-500">(UNH)</span></td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-700 dark:text-slate-300">~0.5%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$0.86B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">常规配置</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">美国医疗保险与健康服务行业绝对龙头。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">11</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">Credo Technology <span class="text-xs font-mono font-normal text-slate-500">(CRDO)</span></td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-700 dark:text-slate-300">~0.4%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$0.69B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">中小配置</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">高速连接与光模块/电缆技术领先企业。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition bg-emerald-500/5">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">12</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">SpaceX <span class="text-xs font-mono font-normal text-slate-500">(未上市/特定持有)</span></td>
+                                    <td class="py-3.5 px-4 font-mono font-bold text-emerald-600 dark:text-emerald-400">~0.4%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$0.69B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">重磅新进</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">商业航天与 Starlink 星链垄断巨头，本季重磅新进配置。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">13</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">Palantir <span class="text-xs font-mono font-normal text-slate-500">(PLTR)</span></td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-700 dark:text-slate-300">~0.3%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$0.52B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">微仓配置</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">大模型数据分析与军工/企业级 AI 操作系统。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">14</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">新思科技 <span class="text-xs font-mono font-normal text-slate-500">(SNPS)</span></td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-700 dark:text-slate-300">~0.2%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$0.34B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">微仓配置</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">半导体 EDA 芯片设计软件寡头。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">15</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">Snowflake <span class="text-xs font-mono font-normal text-slate-500">(SNOW)</span></td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-700 dark:text-slate-300">~0.2%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$0.34B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">微仓配置</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">云数据仓库与数据云平台服务商。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-navy-800/40 transition">
+                                    <td class="py-3.5 px-5 font-mono text-slate-400">16</td>
+                                    <td class="py-3.5 px-5 font-bold text-slate-900 dark:text-white">Tempus AI <span class="text-xs font-mono font-normal text-slate-500">(TEM)</span></td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-700 dark:text-slate-300">~0.1%</td>
+                                    <td class="py-3.5 px-4 font-mono">~$0.17B</td>
+                                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-500/15 text-slate-700 dark:text-slate-300">微仓探索</span></td>
+                                    <td class="py-3.5 px-5 text-xs text-slate-600 dark:text-slate-300">医疗健康人工智能与临床基因组学数据平台。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================================
+            03. 增减持与清仓动态复盘
+            ========================================================= -->
+            <section id="sec-actions" class="scroll-mt-20 space-y-6">
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-mogold-600 dark:text-mogold-400">Section 03 দিল Portfolio Actions & Adjustments</span>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">三、 本季度增减持与清仓动态复盘：果断加仓高确信度标的，清仓阿里巴巴</h2>
+                    </div>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">动态调整：加仓 PDD/TSLA · 新进 SpaceX · 清仓 BABA · 减持 NVDA</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <!-- 加仓卡片 -->
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-emerald-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-2.5 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-xs font-bold">显著加仓</span>
+                                <span class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">PDD & TSLA</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">拼多多与特斯拉获明显增持</h3>
+                            <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                段永平在本季对拼多多（持仓占比升至 13%）与特斯拉（持仓占比升至 8.4%）进行了显著的加仓操作。这表明在经历市场波动时，他对具备极致商业模式、全球化扩张能力以及 AI 远景的头部标的具有极高的买入确信度。
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                            体现价值投资“集中兵力于好公司”原则
+                        </div>
+                    </div>
+
+                    <!-- 新进卡片 -->
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-mogold-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-2.5 py-0.5 rounded bg-mogold-500/15 text-mogold-700 dark:text-mogold-400 text-xs font-bold">重磅新进</span>
+                                <span class="font-mono text-xs font-bold text-mogold-600 dark:text-mogold-400">SpaceX</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">首次建仓商业航天巨头 SpaceX</h3>
+                            <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                本季度最引人注目的新进动作是配置了商业航天与星链（Starlink）绝对霸主 <strong class="text-white">SpaceX</strong>（约占 0.4% 市值）。作为非上市资产在特定机构渠道的持仓披露，凸显段永平对马斯克旗下另一王牌企业护城河的高度认可。
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-mogold-600 dark:text-mogold-400">
+                            布局星链垄断性全球宽带网络
+                        </div>
+                    </div>
+
+                    <!-- 减持清仓卡片 -->
+                    <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-rose-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-2.5 py-0.5 rounded bg-rose-500/15 text-rose-600 dark:text-rose-400 text-xs font-bold">减持与清仓</span>
+                                <span class="font-mono text-xs font-bold text-rose-600 dark:text-rose-400">NVDA & BABA</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">大幅减持英伟达并完全清仓阿里</h3>
+                            <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                受前期股价涨幅及估值考量影响，本季度对英伟达（NVDA）进行了大幅减持；同时，对曾经长期关注并多次操作的中概股 <strong class="text-rose-400">阿里巴巴（BABA）</strong> 进行了完全清仓，彻底退出了前十大持仓。
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-rose-600 dark:text-rose-400">
+                            动态优化组合，去芜存菁
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================================
+            04. 价值投资逻辑与启示
+            ========================================================= -->
+            <section id="sec-strategy" class="scroll-mt-20 space-y-6">
+                <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Section 04 · Investment Philosophy & Takeaways</span>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">四、 从 H&H 2026Q3 持仓看段永平价值投资哲学的三个核心特征</h2>
+                    </div>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">投资方法论：商业模式 > 财报数字 · 护城河至上</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-navy-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-mogold-500/15 text-mogold-600 dark:text-mogold-400 flex items-center justify-center font-bold text-base mb-4">01</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2">极致的集中度与“懂什么买什么”</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            前四大重仓股占比高达 <strong class="text-slate-900 dark:text-white">86.4%</strong>。段永平历来反对过度分散，他认为真正的优秀企业凤毛麟角，当发现商业模式极佳、护城河极深的公司时，应当敢于集中重仓，这需要极强的商业洞察力和定力。
+                        </p>
+                    </div>
+
+                    <div class="bg-white dark:bg-navy-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-base mb-4">02</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2">动态聚焦：拥抱全球化高效率商业模式</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            从对苹果、拼多多、特斯拉的持续加仓以及新进 SpaceX 可以看出，其核心逻辑始终围绕着“能够为消费者创造巨大价值、具有极低边际成本或绝对技术垄断”的伟大商业模式，随基本面变化敏捷做出加减仓抉择。
+                        </p>
+                    </div>
+
+                    <div class="bg-white dark:bg-navy-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-teal-500/15 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold text-base mb-4">03</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2">知行合一：不被市场噪音左右的长线视角</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            无论是对短期股价波动的淡定，还是果断清仓不再符合预期或性价比的标的（如阿里巴巴），都彰显了其“做对的事情，把事情做对”的投资哲学。美股公开 13F 仅为其部分资产组合（未含腾讯与茅台），但足以展现大师级的资产配置功底。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 页脚免责声明 -->
+            <footer class="pt-8 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-2 pb-10">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-semibold text-slate-700 dark:text-slate-300">
+                    <span>段永平旗下 H&H International Investment 2026Q3 美股持仓深度研报</span>
+                    <span>数据基准：SEC 13F 披露及公开市场追踪 (2026年11月)</span>
+                </div>
+                <p class="leading-relaxed">
+                    <strong>免责声明：</strong>本报告基于美国证券交易委员会（SEC）公开披露的 H&H International Investment 13F 季度持仓报告及公开市场信息整理生成，旨在提供客观的机构投资组合结构分析与价值投资逻辑研究。报告中的市值估算、权重比例及增减持判断仅供学习交流参考，不构成任何投资建议或证券买卖依据。投资者据此操作，风险自负。
+                </p>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- 交互脚本与 Chart.js 初始化 -->
+    <script>
+        // 1. 亮色/暗色模式切换
+        function toggleTheme() {
+            const html = document.documentElement;
+            html.classList.toggle('dark');
+            updateChartTheme();
+        }
+
+        // 2. 移动端抽屉菜单
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobile-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        // 3. 阅读进度条与侧边栏高亮联动
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('#desktop-nav .nav-link');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            document.getElementById('reading-progress').style.width = `${Math.min(100, Math.max(0, scrollPercent))}%`;
+
+            let currentId = 'sec-overview';
+            sections.forEach(sec => {
+                const top = sec.offsetTop - 160;
+                if (scrollTop >= top) {
+                    currentId = sec.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const numSpan = link.querySelector('span span');
+                if (numSpan) {
+                    numSpan.classList.remove('text-mogold-400');
+                    numSpan.classList.add('text-slate-500');
+                }
+                if (link.dataset.target === currentId) {
+                    link.classList.add('active');
+                    if (numSpan) {
+                        numSpan.classList.remove('text-slate-500');
+                        numSpan.classList.add('text-mogold-400');
+                    }
+                }
+            });
+        });
+
+        // 4. Chart.js 饼图初始化
+        let pieChartInstance = null;
+
+        function getChartColors() {
+            const isDark = document.documentElement.classList.contains('dark');
+            return {
+                text: isDark ? '#CBD5E1' : '#475569',
+                grid: isDark ? 'rgba(51, 65, 85, 0.5)' : 'rgba(226, 232, 240, 0.85)'
+            };
+        }
+
+        function initPieChart() {
+            const ctx = document.getElementById('portfolioPieChart').getContext('2d');
+            const colors = getChartColors();
+
+            if (pieChartInstance) pieChartInstance.destroy();
+
+            pieChartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['苹果 (AAPL) 41%', '伯克希尔B (BRK.B) 24%', '拼多多 (PDD) 13%', '特斯拉 (TSLA) 8.4%', '其他12只标的 (OXY等) 13.6%'],
+                    datasets: [{
+                        data: [41.0, 24.0, 13.0, 8.4, 13.6],
+                        backgroundColor: [
+                            '#F59E0B',
+                            '#3B82F6',
+                            '#10B981',
+                            '#6366F1',
+                            '#64748B'
+                        ],
+                        borderWidth: 2,
+                        borderColor: document.documentElement.classList.contains('dark') ? '#0F172A' : '#FFFFFF'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: colors.text,
+                                font: { size: 11, family: 'Inter' },
+                                usePointStyle: true,
+                                padding: 15
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: (ctx) => ` 权重占比: ${ctx.parsed}%`
+                            }
+                        }
+                    },
+                    cutout: '62%'
+                }
+            });
+        }
+
+        function updateChartTheme() {
+            initPieChart();
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initPieChart();
+        });
+    </script>
+</body>
+</html>
