@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>段永平 H&amp;H International Investment (CIK: 0001759760) 2026Q3 持仓深度研究报告：$171.91亿 13F 美股组合全景、“大道至简”调仓脉络与跨市场核心资产图谱</title>
+  <!-- Tailwind CSS (Versioned CDN) -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <!-- Chart.js (Versioned CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1"></script>
+  <!-- Google Fonts: Inter + Noto Sans SC + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans SC', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            navy: {
+              950: '#070B14',
+              900: '#0F172A',
+              800: '#1E293B',
+              700: '#334155',
+            },
+            mogold: {
+              300: '#FCD34D',
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+              700: '#B45309',
+            },
+            emerald: {
+              400: '#34D399',
+              500: '#10B981',
+              600: '#059669',
+            },
+            teal: {
+              400: '#22D3EE',
+              500: '#06B6D4',
+              600: '#0891B2',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 自定义滚动条与机构研报细节排版 */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #94A3B8;
+      border-radius: 3px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #475569;
+    }
+
+    /* 打印友好优化 */
+    @media print {
+      #sidebar, #mobile-header, #theme-toggle-btn, .no-print {
+        display: none !important;
+      }
+      main {
+        margin-left: 0 !important;
+        padding: 0 !important;
+      }
+      section {
+        break-inside: avoid;
+      }
+    }
+
+    /* 卡片悬浮微光与上移过渡 */
+    .report-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .report-card:hover {
+      transform: translateY(-2px);
+    }
+
+    /* 侧边导航激活态：琥珀金渐变标识“大道至简”价值底色 */
+    .nav-link.active {
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.24) 0%, rgba(16, 185, 129, 0.06) 100%);
+      border-left: 3px solid #F59E0B;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#1E293B] dark:bg-navy-950 dark:text-slate-100 antialiased selection:bg-mogold-500 selection:text-navy-950 transition-colors duration-200">
+
+  <!-- 顶部全局阅读进度条 -->
+  <div class="fixed top-0 left-0 right-0 h-1 z-50 bg-slate-200/70 dark:bg-navy-800">
+    <div id="reading-progress" class="h-full bg-gradient-to-r from-mogold-600 via-mogold-400 to-emerald-500 w-0 transition-all duration-150"></div>
+  </div>
+
+  <!-- 导出成功轻提示 Toast -->
+  <div id="export-toast" class="fixed bottom-5 right-5 z-50 hidden items-center space-x-2.5 px-4 py-3 rounded-xl bg-navy-900 text-white border border-mogold-500/50 shadow-2xl text-xs font-medium">
+    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+    <span id="export-toast-msg">已成功导出独立网页文件 Duan_Yongping_HH_Holdings_2026Q3.html</span>
+  </div>
+
+  <!-- 移动端顶部导航栏 -->
+  <header id="mobile-header" class="lg:hidden sticky top-0 z-40 bg-navy-900 text-white border-b border-slate-800 px-4 py-3 flex items-center justify-between shadow-md">
+    <div class="flex items-center space-x-2.5">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-mogold-400 to-mogold-600 flex items-center justify-center font-extrabold text-navy-950 text-xs shadow">
+        H&amp;H
+      </div>
+      <div>
+        <div class="text-[11px] text-mogold-400 font-semibold tracking-wider uppercase">CIK: 0001759760 · 2026Q3 13F</div>
+        <div class="text-sm font-bold leading-tight">段永平 H&amp;H 持仓全景深度研报</div>
+      </div>
+    </div>
+    <div class="flex items-center space-x-1.5">
+      <button onclick="downloadHtmlFile()" class="px-2.5 py-1.5 rounded-lg bg-mogold-500 hover:bg-mogold-600 text-navy-950 font-bold text-xs cursor-pointer" aria-label="导出HTML">
+        导出.html
+      </button>
+      <button onclick="toggleTheme()" class="p-2 rounded-lg bg-navy-800 hover:bg-navy-700 text-slate-300 cursor-pointer" aria-label="切换阅读主题">
+        <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </button>
+      <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-navy-800 hover:bg-navy-700 text-white cursor-pointer" aria-label="打开目录">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- 移动端折叠抽屉菜单 -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 hidden lg:hidden">
+    <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm" onclick="toggleMobileMenu()"></div>
+    <nav class="relative w-72 max-w-[80vw] h-full bg-navy-900 text-slate-300 flex flex-col justify-between p-5 overflow-y-auto shadow-2xl">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+          <span class="font-bold text-white text-base">段永平 H&amp;H 研报目录导航</span>
+          <button onclick="toggleMobileMenu()" class="p-1.5 rounded-lg text-slate-400 hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <ul class="mt-4 space-y-1.5 text-sm">
+          <li><a href="#sec-exec" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">00. 执行摘要与核心指标</a></li>
+          <li><a href="#sec-biz" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">01. 持仓架构与四大战略支柱</a></li>
+          <li><a href="#sec-moat" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">02. 大道哲学与四重护城河</a></li>
+          <li><a href="#sec-comp" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">03. 2026Q3 全部16只持仓矩阵</a></li>
+          <li><a href="#sec-fin" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">04. 期权策略与复利推演模拟</a></li>
+          <li><a href="#sec-inv" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">05. 投资决策与抄作业框架</a></li>
+          <li><a href="#sec-kpi" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-navy-800 hover:text-white">06. 季度 13F 跟踪核查清单</a></li>
+        </ul>
+      </div>
+      <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 space-y-2">
+        <button onclick="downloadHtmlFile()" class="w-full py-2 px-3 rounded-lg bg-mogold-500 text-navy-950 font-bold text-xs cursor-pointer">一键导出 .html 网页文件</button>
+        <p>全球华人价值投资与 13F 深度追踪组</p>
+        <p>数据基准：2026年11月16日 SEC 13F-HR</p>
+      </div>
+    </nav>
+  </div>
+
+  <!-- 桌面端左侧固定侧边导航栏 (宽 280px) -->
+  <aside id="sidebar" class="hidden lg:flex fixed top-0 left-0 bottom-0 w-[280px] bg-[#0F172A] text-slate-300 flex-col justify-between border-r border-slate-800 z-30 select-none">
+    <div>
+      <!-- 机构品牌头 -->
+      <div class="p-5 border-b border-slate-800/80">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mogold-400 via-mogold-500 to-mogold-600 flex items-center justify-center text-navy-950 font-extrabold text-sm shadow-lg shadow-mogold-500/25">
+            H&amp;H
+          </div>
+          <div>
+            <span class="inline-block text-[10px] font-bold tracking-widest uppercase text-mogold-400 bg-mogold-500/15 px-2 py-0.5 rounded">CIK: 0001759760</span>
+            <h2 class="text-white font-bold text-base mt-0.5 tracking-tight">段永平 H&amp;H 持仓研报</h2>
+          </div>
+        </div>
+        <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+          “买股票就是买公司” · $171.91亿 13F 美股组合与茅台/腾讯跨市场核心资产全景
+        </p>
+      </div>
+
+      <!-- 实时组合快照徽章 -->
+      <div class="px-5 py-3 bg-navy-950/70 border-b border-slate-800/80 space-y-1.5 text-xs">
+        <div class="flex items-center justify-between">
+          <span class="text-slate-400">管理机构主体</span>
+          <span class="font-mono font-bold text-white">H&amp;H Intl. <span class="text-slate-400 text-[10px]">(Palo Alto)</span></span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-slate-400">2026Q3 13F 美股总值</span>
+          <span class="font-mono font-bold text-emerald-400">$17.19B <span class="text-slate-400">(16只标的)</span></span>
+        </div>
+        <div class="flex items-center justify-between pt-1 border-t border-slate-800/70">
+          <span class="text-slate-400">双核 / 前10集中度</span>
+          <span class="font-mono font-bold text-mogold-400">65.28% · Top10 98.91%</span>
+        </div>
+      </div>
+
+      <!-- 七大核心章节目录导航 -->
+      <div class="px-3 py-3 overflow-y-auto max-h-[calc(100vh-340px)]">
+        <div class="px-3 mb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">核心研究章节</div>
+        <nav id="desktop-nav" class="space-y-1 text-[13px]">
+          <a href="#sec-exec" data-target="sec-exec" class="nav-link active flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+            <span><span class="text-xs font-mono text-mogold-400 mr-2">00</span>执行摘要与核心指标</span>
+          </a>
+          <a href="#sec-biz" data-target="sec-biz" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+            <span><span class="text-xs font-mono text-slate-500 mr-2">01</span>持仓架构与四大支柱</span>
+          </a>
+          <a href="#sec-moat" data-target="sec-moat" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+            <span><span class="text-xs font-mono text-slate-500 mr-2">02</span>大道哲学与四重护城河</span>
+          </a>
+          <a href="#sec-comp" data-target="sec-comp" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+            <span><span class="text-xs font-mono text-slate-500 mr-2">03</span>全部16只13F持仓矩阵</span>
+          </a>
+          <a href="#sec-fin" data-target="sec-fin" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+            <span><span class="text-xs font-mono text-slate-500 mr-2">04</span>期权策略与复利推演</span>
+          </a>
+          <a href="#sec-inv" data-target="sec-inv" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+            <span><span class="text-xs font-mono text-slate-500 mr-2">05</span>估值决策与抄作业框架</span>
+          </a>
+          <a href="#sec-kpi" data-target="sec-kpi" class="nav-link flex items-center justify-between px-3 py-2 rounded-r-lg text-slate-300 hover:bg-navy-800/70 hover:text-white transition-all">
+            <span><span class="text-xs font-mono text-slate-500 mr-2">06</span>季度 13F 跟踪核查清单</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- 侧边栏底部工具栏 -->
+    <div class="p-4 border-t border-slate-800/80 bg-navy-950/50 space-y-2">
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-slate-400">阅读模式切换</span>
+        <button id="theme-toggle-btn" onclick="toggleTheme()" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg bg-navy-800 hover:bg-navy-700 text-xs font-medium text-slate-200 border border-slate-700 transition cursor-pointer">
+          <svg class="w-3.5 h-3.5 text-mogold-400 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg class="w-3.5 h-3.5 text-mogold-500 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <span class="dark:hidden">深色护眼模式</span>
+          <span class="hidden dark:inline">机构亮色模式</span>
+        </button>
+      </div>
+      <button onclick="downloadHtmlFile()" class="w-full flex items-center justify-center space-x-2 py-2 px-3 rounded-lg bg-gradient-to-r from-mogold-500 to-mogold-600 hover:from-mogold-600 hover:to-mogold-700 text-navy-950 text-xs font-extrabold transition shadow-sm cursor-pointer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        <span>导出独立 .html 网页文件</span>
+      </button>
+      <button onclick="window.print()" class="w-full flex items-center justify-center space-x-2 py-1.5 px-3 rounded-lg bg-navy-800 hover:bg-navy-700 text-slate-200 border border-slate-700 text-xs font-semibold transition cursor-pointer">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+        <span>打印 / 导出 PDF 研报</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- 主内容区 -->
+  <main class="lg:ml-[280px] min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8 py-8 lg:py-12 space-y-12">
+
+      <!-- =========================================================
+      00. Hero 研报封面区与执行摘要
+      ========================================================= -->
+      <section id="sec-exec" class="scroll-mt-20">
+        <!-- 顶部研报元数据标签栏 -->
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs text-slate-500 dark:text-slate-400">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-2.5 py-1 rounded-md bg-mogold-500/15 text-mogold-700 dark:text-mogold-400 font-bold border border-mogold-500/30">评级：华人价值投资标杆 · 极度集中型现金流复利机器</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-200/70 dark:bg-navy-800 text-slate-700 dark:text-slate-300 font-medium">文件基准：SEC Form 13F-HR (2026-11-16 披露) · H&amp;H International Investment</span>
+          </div>
+          <div class="flex items-center space-x-3 font-mono">
+            <span>覆盖时间：2026年11月</span>
+            <a href="https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026" target="_blank" rel="noopener noreferrer" class="text-mogold-600 dark:text-mogold-400 hover:underline">SEC Accession: 0001759760-26-000008 ↗</a>
+          </div>
+        </div>
+
+        <!-- Hero 标题卡片 -->
+        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy-900 via-navy-800 to-slate-900 text-white p-6 sm:p-10 shadow-xl border border-slate-700/70">
+          <!-- 背景琥珀金点阵纹理 -->
+          <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#F59E0B 1.2px, transparent 1.2px); background-size: 24px 24px;"></div>
+          <div class="relative z-10">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-mogold-500/20 border border-mogold-400/40 text-mogold-300 text-xs font-semibold">
+                <span class="w-2 h-2 rounded-full bg-mogold-400 animate-pulse"></span>
+                <span>PORTFOLIO THESIS · 双核(AAPL+BRK.B)占 65.28% × 逆势加仓拼多多(12.69%)与特斯拉(8.42%) × 新进 SpaceX</span>
+              </div>
+              <button onclick="downloadHtmlFile()" class="no-print inline-flex items-center space-x-1.5 px-3 py-1 rounded-lg bg-mogold-500 hover:bg-mogold-400 text-navy-950 font-extrabold text-xs transition shadow cursor-pointer">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span>一键下载 .html 报告文件</span>
+              </button>
+            </div>
+
+            <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight text-white">
+              段永平 H&amp;H International Investment (CIK: 0001759760) 2026Q3 持仓深度研究报告：$171.91亿美股组合全景、“大道至简”调仓脉络与跨市场核心资产图谱
+            </h1>
+            <p class="mt-4 text-sm sm:text-base text-slate-300 max-w-4xl leading-relaxed">
+              根据 2026 年 11 月 16 日向美国证监会（SEC）提交的最新 <a href="https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026" target="_blank" rel="noopener noreferrer" class="text-mogold-300 underline hover:text-mogold-200">2026Q3 Form 13F-HR 报告</a>，知名华人投资家、步步高系创始人<strong class="text-white">段永平（雪球 ID：“大道无形我有型”）</strong>执掌的 <strong class="text-white">H&amp;H International Investment, LLC</strong> 美股持仓总市值为 <strong class="text-mogold-400">$171.91亿（$17.19B，共 16 只美股标的）</strong>，叠加 A 股永久重仓<strong class="text-emerald-400">贵州茅台（600519.SH）</strong>与港股重仓<strong class="text-emerald-400">腾讯控股（00700.HK）</strong>后，其全球跨市场股票组合规模逾 <strong class="text-emerald-400">$240亿</strong>。
+              本季调仓呈现鲜明的<strong class="text-white">“双核压舱石稳守三分之二仓位、逆势重锤拼多多与特斯拉、期权策略驱动减持 AI 算力、新进 SpaceX 并清仓阿里”</strong>四大特征：<strong class="text-mogold-300">苹果（AAPL 41.07%）与伯克希尔（BRK.B 24.21%）</strong>合计高达 <strong class="text-mogold-300">65.28%</strong>；同时大举增持 <strong class="text-emerald-400">拼多多（PDD +11.86% 至 $21.82亿，权重首破两位数达 12.69%）</strong> 与 <strong class="text-emerald-400">特斯拉（TSLA +20.70% 至 $14.48亿，占 8.42%）</strong>，新建仓商业航天霸主 <strong class="text-teal-400">SpaceX（SPCX 19.99万股）</strong>，清仓阿里巴巴（BABA）等 3 股，并对英伟达（NVDA -63.07%）与谷歌（GOOG -41.50%）实施含备兑期权行权（Covered Call）在内的高位减仓。
+            </p>
+
+            <!-- 核心投资结论高亮条 -->
+            <div class="mt-6 pt-6 border-t border-slate-700/80 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+              <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                <div class="text-slate-400 font-medium mb-1">极致集中度：前四大占 86.4% · 前十大占 98.9%</div>
+                <div class="text-white font-semibold">AAPL(41.07%) + BRK.B(24.21%) 双核占 65.28%；加上 PDD(12.69%) 与 TSLA(8.42%) 四大重仓锁死 86.39% 组合净值</div>
+              </div>
+              <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                <div class="text-slate-400 font-medium mb-1">“清阿里、聚焦拼多多” + 加码马斯克硬科技双翼</div>
+                <div class="text-mogold-400 font-semibold">彻底清仓 BABA(30.14万股)，增持 PDD +296.9万股站上 12.69%；增持 TSLA +20.7% 并新进 SpaceX 19.99万股</div>
+              </div>
+              <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                <div class="text-slate-400 font-medium mb-1">期权机制解析：NVDA 减持 63% 背后的“被 Call 走”逻辑</div>
+                <div class="text-emerald-400 font-semibold">NVDA 减持 396万股部分源于 Covered Call 到期被行权，段永平坦言“不看空且计划买回部分被 call 走的筹码”</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4个核心 KPI 卡片 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-6">
+          <!-- KPI 1 -->
+          <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
+              <span>2026Q3 13F 美股组合总市值</span>
+              <span class="p-1.5 rounded-lg bg-mogold-500/15 text-mogold-600 dark:text-mogold-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              </span>
+            </div>
+            <div class="mt-3 flex items-baseline space-x-2">
+              <span class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono">$17.19B</span>
+              <span class="text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-2 py-0.5 rounded">-10.0% QoQ</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              折合 $171.91亿（较 Q2 末 $191.0亿回落约 10%，主因苹果、英伟达备兑期权行权交割及主动兑现部分浮盈）。
+            </p>
+          </div>
+
+          <!-- KPI 2 -->
+          <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
+              <span>双核压舱石 (AAPL + BRK.B)</span>
+              <span class="p-1.5 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              </span>
+            </div>
+            <div class="mt-3 flex items-baseline space-x-2">
+              <span class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono">65.28%</span>
+              <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/15 px-2 py-0.5 rounded">$11.22B</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              苹果（$70.61亿 / 41.07%）与伯克希尔B（$41.61亿 / 24.21%）合计达 $112.22亿，构筑不可撼动的绝对底仓。
+            </p>
+          </div>
+
+          <!-- KPI 3 -->
+          <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
+              <span>逆势进攻双锋 (PDD + TSLA)</span>
+              <span class="p-1.5 rounded-lg bg-teal-500/15 text-teal-600 dark:text-teal-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </span>
+            </div>
+            <div class="mt-3 flex items-baseline space-x-2">
+              <span class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono">21.11%</span>
+              <span class="text-xs font-bold text-teal-600 dark:text-teal-400 bg-teal-500/15 px-2 py-0.5 rounded">$3.63B 持仓</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              拼多多（+11.86% 至 $21.82亿 / 12.69%）与特斯拉（+20.70% 至 $14.48亿 / 8.42%）获大举加仓，稳居第三、第四重仓。
+            </p>
+          </div>
+
+          <!-- KPI 4 -->
+          <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
+              <span>跨市场三大皇冠 (含茅台/腾讯)</span>
+              <span class="p-1.5 rounded-lg bg-mogold-500/15 text-mogold-600 dark:text-mogold-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </span>
+            </div>
+            <div class="mt-3 flex items-baseline space-x-2">
+              <span class="text-3xl font-extrabold text-slate-900 dark:text-white font-mono">&gt;$24.0B</span>
+              <span class="text-xs font-bold text-mogold-700 dark:text-mogold-400 bg-mogold-500/15 px-2 py-0.5 rounded">中美三核心</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              段永平多次强调其核心持仓为“苹果（美股）+ 贵州茅台（A股）+ 腾讯控股（港股）”，13F 仅展示其美股截面。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+      一、 持仓架构与四大战略支柱 (Portfolio Architecture)
+      ========================================================= -->
+      <section id="sec-biz" class="scroll-mt-20 space-y-6">
+        <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-mogold-600 dark:text-mogold-400">Section 01 · Portfolio Architecture &amp; Q3 Trade Moves</span>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">一、 持仓架构与调仓脉络：前四大重仓锁死 86.39% 权重，“加仓拼多多与马斯克系、兑现部分算力浮盈”</h2>
+          </div>
+          <span class="text-xs text-slate-500 dark:text-slate-400">2026Q3 调仓总览：1只新进 · 2只增持 · 6只减持 · 7只锁仓 · 3只清仓</span>
+        </div>
+
+        <!-- 交互式 Chart.js 双视图切换面板 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- 左侧：双视图图表 -->
+          <div class="lg:col-span-7 bg-white dark:bg-navy-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white text-base" id="biz-chart-title">2025Q3–2026Q3 段永平 H&amp;H 13F 持仓规模演进与核心资产分层</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5" id="biz-chart-sub">双核（AAPL+BRK.B）始终占据 65%~75% 绝对权重，拼多多与特斯拉占比在 2026Q3 创历史新高（合计 21.11%）</p>
+              </div>
+              <div class="inline-flex rounded-lg bg-slate-100 dark:bg-navy-800 p-1 text-xs no-print">
+                <button onclick="switchBizChart('sector_evolution')" id="btn-chart-evo" class="px-2.5 py-1 rounded-md font-semibold bg-white dark:bg-navy-700 text-mogold-600 dark:text-mogold-400 shadow-sm transition cursor-pointer">视图A：季度规模与结构演进</button>
+                <button onclick="switchBizChart('trade_moves')" id="btn-chart-split" class="px-2.5 py-1 rounded-md font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition cursor-pointer">视图B：2026Q3 增减持幅度榜</button>
+              </div>
+            </div>
+            <div class="relative h-72 w-full">
+              <canvas id="bizArchitectureChart"></canvas>
+            </div>
+          </div>
+
+          <!-- 右侧：2026Q3 三大核心调仓洞察 -->
+          <div class="lg:col-span-5 bg-white dark:bg-navy-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white text-base mb-3">2026Q3 段永平四大核心资本配置动作拆解</h3>
+              <ul class="space-y-3.5 text-sm">
+                <li class="flex items-start space-x-3">
+                  <span class="w-6 h-6 rounded-full bg-mogold-500/15 text-mogold-600 dark:text-mogold-400 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                  <div>
+                    <div class="font-semibold text-slate-900 dark:text-white">“清仓阿里、重仓拼多多”：中概电商 100% 归拢至 PDD</div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                      H&amp;H 在 Q3 将此前仅剩的 <strong>30.14万股阿里巴巴（BABA）彻底清仓</strong>，同时逆势增持 <strong>拼多多（PDD）+296.88万股（+11.86%）</strong> 至 2,799.09万股（期末市值 <strong>$21.82亿</strong>），权重由 Q2 的 9.99% 跃升至 <strong>12.69%</strong>，首次突破两位数大关。
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <span class="w-6 h-6 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                  <div>
+                    <div class="font-semibold text-slate-900 dark:text-white">全面押注马斯克硬科技：大加特斯拉 + 新进 SpaceX</div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                      继过往反思对马斯克的早期偏见后，段永平在 Q3 大举增持 <strong>特斯拉（TSLA +20.70% / +69.96万股）</strong> 至 408.00万股（市值 <strong>$14.48亿，占 8.42%</strong>），并新建仓商业航天与星链龙头 <strong>SpaceX（SPCX 19.99万股 A类股，市值 $3,015.69万）</strong>。
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start space-x-3">
+                  <span class="w-6 h-6 rounded-full bg-teal-500/15 text-teal-600 dark:text-teal-400 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                  <div>
+                    <div class="font-semibold text-slate-900 dark:text-white">英伟达减持 -63.07% 实情：期权“被 Call 走”与动态再平衡</div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                      Q3 英伟达（NVDA）由 628.07万股降至 <strong>231.95万股（-63.07%，市值 $5.30亿）</strong>，谷歌（GOOG）减持 <strong>-41.50%</strong>。段永平在雪球明确表示：减持部分源于此前卖出的备兑看涨期权（Covered Call）被行权交割，“不看空 NVDA 护城河，计划择机买回部分被 call 走的股票”。
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-500 dark:text-slate-400">2026Q3 仓位调整结构</span>
+              <span class="font-bold text-mogold-600 dark:text-mogold-400">新进 SPCX · 增持 PDD/TSLA · 清仓 BABA/CRCL/INOD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 四大持仓战略支柱卡片矩阵 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- 支柱 1：压舱石双核 -->
+          <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-mogold-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-1 rounded-md bg-mogold-500/15 text-mogold-700 dark:text-mogold-400 text-xs font-bold">第一支柱 · 占 13F 权重 65.28%</span>
+                <span class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">合计市值 $11.22B ($112.22亿)</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">1. 压舱石信仰双核（苹果 AAPL + 伯克希尔 BRK.B）</h3>
+              <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <strong>苹果（AAPL 2,120.42万股，$70.61亿，41.07%）</strong>自 2011 年建仓以来一直是段永平美股头号重仓，其无比强大的 iOS 用户粘性、照妖镜般的商业文化与每年近千亿美元回购构成了组合定海神针；<strong>伯克希尔（BRK.B 826.12万股，$41.61亿，24.21%）</strong>则被段永平视为“比纯现金更安全的复利底座”，两大核心合计占组合近三分之二。
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <span>AAPL 41.07% ($7.06B) | BRK.B 24.21% ($4.16B)</span>
+              <span class="text-mogold-600 dark:text-mogold-400 font-semibold">十年级压舱石 · 配合期权收租</span>
+            </div>
+          </div>
+
+          <!-- 支柱 2：高成长进攻双翼 -->
+          <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-emerald-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 text-xs font-bold">第二支柱 · 占 13F 权重 21.29%</span>
+                <span class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">合计市值 $3.66B ($36.60亿)</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">2. 高成长逆势重锤（拼多多 PDD + 特斯拉 TSLA + SpaceX）</h3>
+              <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                作为早期天使投资人与长期股东，段永平在 Q3 逆势增持 <strong>拼多多（PDD 2,799.09万股，$21.82亿，12.69%）</strong>，看重其极致供应链效率与本分团队；同时加码 <strong>特斯拉（TSLA 408.00万股，$14.48亿，8.42%）</strong> 并新进 <strong>SpaceX（SPCX 19.99万股，$0.30亿，0.18%）</strong>，深度绑定 FSD 自动驾驶、Optimus 机器人与 Starlink 星链网络。
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <span>PDD 12.69% | TSLA 8.42% | SPCX 0.18%</span>
+              <span class="text-emerald-600 dark:text-emerald-400 font-semibold">Q3 全线逆势加仓与新建仓焦点</span>
+            </div>
+          </div>
+
+          <!-- 支柱 3：AI算力、云生态与价值防御阵营 -->
+          <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-teal-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-1 rounded-md bg-teal-500/15 text-teal-700 dark:text-teal-400 text-xs font-bold">第三支柱 · 占 13F 权重 13.43%</span>
+                <span class="font-mono text-xs font-bold text-teal-600 dark:text-teal-400">合计市值 $2.31B ($23.09亿)</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">3. AI 算力生态与高现金流价值盾（OXY + NVDA + GOOG + MSFT + DIS + UNH）</h3>
+              <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                在传统价值与文化护城河端，锁仓 <strong>西方石油（OXY $5.68亿，3.30%，升至第五）</strong>、<strong>迪士尼（DIS $1.97亿，1.14%）</strong> 与 <strong>联合健康（UNH $1.46亿，0.85%）</strong>；在 AI 科技链端，持有 <strong>英伟达（NVDA $5.30亿，3.08%）</strong>、<strong>谷歌（GOOG $4.85亿，2.82%）</strong>、<strong>微软（MSFT $2.29亿，1.33%）</strong>、<strong>Credo（CRDO $1.40亿，0.81%）</strong> 及 PLTR/SNPS/SNOW/TEM 四只前沿观察仓。
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <span>OXY 3.30% | NVDA 3.08% | GOOG 2.82% | MSFT 1.33%</span>
+              <span class="text-teal-600 dark:text-teal-400 font-semibold">AI 生态保留核心底仓 + 能源/IP 防御</span>
+            </div>
+          </div>
+
+          <!-- 支柱 4：表外非13F核心重仓（贵州茅台 + 腾讯控股） -->
+          <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-indigo-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-1 rounded-md bg-indigo-500/15 text-indigo-700 dark:text-indigo-400 text-xs font-bold">第四支柱 · 非美 13F 豁免披露资产</span>
+                <span class="font-mono text-xs font-bold text-indigo-600 dark:text-indigo-400">估算规模 ~$6.5B–$8.0B+</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">4. 13F 表外非美永久核心资产（A股贵州茅台 + 港股腾讯控股）</h3>
+              <p class="mt-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                解读段永平 13F 必须牢记：SEC 13F 仅统计美股挂牌证券。段永平在雪球多次公开表示，其个人与家族真正压箱底的三大跨市场核心标的为<strong>“苹果（美股 AAPL）+ 贵州茅台（A股 600519.SH）+ 腾讯控股（港股 00700.HK）”</strong>。茅台自 2012 年 ₹180 元附近重仓以来一股未卖、分红持续复投；腾讯则在 2022–2024 年港股低谷期通过港股原股与 ADR 大举抄底并长期持有。
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <span>贵州茅台 (600519.SH) + 腾讯控股 (00700.HK)</span>
+              <span class="text-indigo-600 dark:text-indigo-400 font-semibold">非美资产无需申报 13F · 十年不动摇</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+      二、 投资哲学与四重核心护城河 (Investment Philosophy & Moat)
+      ========================================================= -->
+      <section id="sec-moat" class="scroll-mt-20 space-y-6">
+        <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Section 02 · "Right Business, Right People, Right Price" Philosophy</span>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">二、 “大道至简”投资哲学与四重护城河：实业家视角如何锻造超额复利？</h2>
+          </div>
+          <span class="text-xs text-slate-500 dark:text-slate-400">体系评级：实业穿透型认知护城河 (Founder's Operational Insight + Option Cashflow)</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <!-- 左侧：四重护城河深度解析 -->
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- 护城河 1 -->
+            <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center space-x-2.5 mb-2.5">
+                <span class="w-8 h-8 rounded-lg bg-mogold-500/15 text-mogold-600 dark:text-mogold-400 flex items-center justify-center font-bold text-sm">01</span>
+                <h3 class="font-bold text-slate-900 dark:text-white text-sm">“买股票就是买公司”与十年自由现金流折现</h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                段永平是全市场少有的将巴菲特一句话真正落地的实业家：<strong>“看懂商业模式 + 看懂企业文化”</strong>。无论是苹果、茅台还是伯克希尔，他只重仓未来 10 年自由现金流高度确定、拥有差异化定价权且无需靠低价倾销维生的商业机器。
+              </p>
+            </div>
+
+            <!-- 护城河 2 -->
+            <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center space-x-2.5 mb-2.5">
+                <span class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-sm">02</span>
+                <h3 class="font-bold text-slate-900 dark:text-white text-sm">“本分”与“不为清单”（Stop Doing List）</h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                步步高、OPPO、vivo 与小天才的成功基因源于<strong>“做对的事情，把事情做对”</strong>。在投资端体现为严格的“不为清单”：<strong>不做空、不用融资杠杆、不买看不懂或企业文化有瑕疵的公司</strong>，一旦发现逻辑存疑（如早年果断止损航空股与近期清仓 BABA）立刻纠错。
+              </p>
+            </div>
+
+            <!-- 护城河 3 -->
+            <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center space-x-2.5 mb-2.5">
+                <span class="w-8 h-8 rounded-lg bg-teal-500/15 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold text-sm">03</span>
+                <h3 class="font-bold text-slate-900 dark:text-white text-sm">100% 现金担保 Sell Put 与 Covered Call 期权增强</h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                段永平是期权工具的大师级运用者：在想买好公司（如 PDD、AAPL、NVDA）但嫌贵或等待回调时，通过<strong>全额现金担保卖出看跌期权（Cash-Secured Sell Put）</strong>边收高额权利金边等低价接货；在持仓短期过热时卖出 <strong>Covered Call</strong> 增厚现金流。
+              </p>
+            </div>
+
+            <!-- 护城河 4 -->
+            <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center space-x-2.5 mb-2.5">
+                <span class="w-8 h-8 rounded-lg bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-sm">04</span>
+                <h3 class="font-bold text-slate-900 dark:text-white text-sm">家族自有永久资本与硅谷一级半市场人脉圈</h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                H&amp;H 管理的是段永平家族与核心关联永久资本，<strong>零外部LP赎回压力、零短期排名考核</strong>。同时身处加州帕罗奥图（Palo Alto），使其不仅能早期投资拼多多，更能直接拿到 <strong>SpaceX A类普通股（SPCX）</strong> 等稀缺顶级科技股权。
+              </p>
+            </div>
+          </div>
+
+          <!-- 右侧：五维组合质量雷达图 -->
+          <div class="lg:col-span-5 bg-white dark:bg-navy-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1">段永平 H&amp;H 组合五维护城河与资本效率雷达图</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">段永平 H&amp;H 组合 vs 标普 500 指数 vs 华尔街对冲基金均值（满分 10 分）</p>
+            <div class="relative h-72 w-full">
+              <canvas id="moatRadarChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+      三、 2026Q3 全部 16 只 13F 持仓全景明细矩阵 + 3只清仓对照
+      ========================================================= -->
+      <section id="sec-comp" class="scroll-mt-20 space-y-6">
+        <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col lg:flex-row lg:items-end justify-between gap-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-mogold-600 dark:text-mogold-400">Section 03 · Complete 2026Q3 SEC 13F-HR Holdings Matrix (16 Active + 3 Exited)</span>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">三、 2026Q3 全部 16 只 13F 持仓全景明细表：股数、市值、权重与“大道逻辑”逐一拆解</h2>
+          </div>
+          <!-- 交互式筛选按钮与搜索框 -->
+          <div class="flex flex-wrap items-center gap-2 text-xs no-print">
+            <div class="relative">
+              <input type="text" id="holding-search-input" oninput="searchHoldings()" placeholder="搜索代码或公司名 (如 PDD, NVDA, SPCX)..." class="w-48 sm:w-56 pl-3 pr-7 py-1.5 rounded-lg bg-white dark:bg-navy-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:border-mogold-500 text-xs" />
+            </div>
+            <div class="flex flex-wrap gap-1.5" id="comp-filter-group">
+              <button onclick="filterHoldings('all')" data-filter="all" class="comp-filter-btn active px-3 py-1.5 rounded-lg font-semibold bg-mogold-500 text-navy-950 shadow-sm transition cursor-pointer">全部在持 (16)</button>
+              <button onclick="filterHoldings('top10')" data-filter="top10" class="comp-filter-btn px-3 py-1.5 rounded-lg font-medium bg-white dark:bg-navy-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 transition cursor-pointer">前十大重仓 (98.9%)</button>
+              <button onclick="filterHoldings('added')" data-filter="added" class="comp-filter-btn px-3 py-1.5 rounded-lg font-medium bg-white dark:bg-navy-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 transition cursor-pointer">Q3 新进/增持 (3)</button>
+              <button onclick="filterHoldings('reduced')" data-filter="reduced" class="comp-filter-btn px-3 py-1.5 rounded-lg font-medium bg-white dark:bg-navy-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 transition cursor-pointer">Q3 减持调仓 (6)</button>
+              <button onclick="filterHoldings('unchanged')" data-filter="unchanged" class="comp-filter-btn px-3 py-1.5 rounded-lg font-medium bg-white dark:bg-navy-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 transition cursor-pointer">Q3 锁仓不动 (7)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 16只持仓完整对比表格 -->
+        <div class="bg-white dark:bg-navy-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+          <div class="px-5 py-3 bg-slate-50 dark:bg-navy-950/60 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+            <span id="table-count-label">当前显示：全部 16 个 SEC 13F 在持证券条目（合计市值 $17,191,157,000）</span>
+            <span>数据核实源：<a href="https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026" target="_blank" rel="noopener noreferrer" class="text-mogold-600 dark:text-mogold-400 underline">13f.info H&amp;H Q3 2026</a> · <a href="https://whalewisdom.com/filer/h-h-international-investment-llc" target="_blank" rel="noopener noreferrer" class="text-mogold-600 dark:text-mogold-400 underline">WhaleWisdom 档案</a></span>
+          </div>
+          <div class="overflow-x-auto max-h-[680px]">
+            <table class="w-full text-left border-collapse">
+              <thead class="sticky top-0 z-10">
+                <tr class="bg-slate-100 dark:bg-navy-800 border-b border-slate-200 dark:border-slate-700 text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+                  <th class="py-3.5 px-4 min-w-[60px]">排名</th>
+                  <th class="py-3.5 px-4 min-w-[195px]">股票代码与公司名称</th>
+                  <th class="py-3.5 px-3 min-w-[115px]">行业分类</th>
+                  <th class="py-3.5 px-4 text-right min-w-[120px]">2026Q3 持股数</th>
+                  <th class="py-3.5 px-4 text-right min-w-[115px]">Q3 持仓市值</th>
+                  <th class="py-3.5 px-3 text-right min-w-[85px]">组合权重</th>
+                  <th class="py-3.5 px-4 text-center min-w-[130px]">Q3 股数变动</th>
+                  <th class="py-3.5 px-4 min-w-[260px]">段永平“大道”持仓逻辑与期权/调仓背景</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm" id="holdings-table-body">
+                <!-- 由 JS 从经过 100% 校验的 16 条 SEC 13F 数据动态渲染并支持搜索与分类过滤 -->
+              </tbody>
+            </table>
+          </div>
+          <!-- 2026Q3 清仓退出的 3 只标的附注横幅 -->
+          <div class="px-5 py-3.5 bg-rose-500/5 dark:bg-rose-950/25 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-2 py-0.5 rounded bg-rose-500/15 text-rose-700 dark:text-rose-400 font-bold">2026Q3 完全清仓退出 (3只)</span>
+              <span class="text-slate-700 dark:text-slate-300 font-medium">
+                <strong>1. BABA (阿里巴巴)</strong>：Q2 末持仓 30.14万股全部清零（中概电商仓位 100% 集中至拼多多 PDD）；
+                <strong>2. CRCL (Circle Internet Group)</strong>：稳定币发行商观察仓清零；
+                <strong>3. INOD (Innodata Inc.)</strong>：AI 数据标注公司观察仓清零。
+              </span>
+            </div>
+            <span class="font-mono text-rose-600 dark:text-rose-400 font-semibold">Q3 持股数均降为 0 (-100%)</span>
+          </div>
+        </div>
+
+        <!-- 配套 Chart.js 横向条形图：前十大重仓股持仓市值与组合权重对比 -->
+        <div class="bg-white dark:bg-navy-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white text-base">段永平 H&amp;H 2026Q3 前十大 13F 持仓市值（$B）与组合权重（%）双维对比</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">前十大重仓合计市值达 $170.05亿，占 13F 总组合的 98.91%（其中 AAPL + BRK.B + PDD + TSLA 前四大占据 86.39%）</p>
+            </div>
+            <span class="text-xs font-semibold text-mogold-700 dark:text-mogold-400 bg-mogold-500/15 px-2.5 py-1 rounded">Top 10 集中度 98.91%</span>
+          </div>
+          <div class="relative h-80 w-full">
+            <canvas id="compMarginChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+      四、 期权策略与“大道复利+Sell Put”动态推演 (Option Strategy & Simulator)
+      ========================================================= -->
+      <section id="sec-fin" class="scroll-mt-20 space-y-6">
+        <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Section 04 · Option Cashflow Mechanics &amp; Compounding Simulator</span>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">四、 期权增强机制与复利推演：如何用 Sell Put 建仓拼多多、用 Covered Call 收租？</h2>
+          </div>
+          <span class="text-xs text-slate-500 dark:text-slate-400">核心心法：100% 现金备兑 · 绝不裸卖空 · 只对真正想长持的好公司卖 Put</span>
+        </div>
+
+        <!-- 1. 四大硬核组合与期权运作指标卡 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="text-xs font-bold text-mogold-600 dark:text-mogold-400 uppercase">Top 4 Concentration</div>
+            <div class="text-2xl font-extrabold font-mono text-slate-900 dark:text-white mt-1">86.39% <span class="text-xs text-emerald-500">$14.85B</span></div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+              AAPL（41.07%）、BRK.B（24.21%）、PDD（12.69%）、TSLA（8.42%）四大标的锁死逾八成半资金，其余 12 只标的仅占 13.61%。
+            </p>
+          </div>
+
+          <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase">PDD Stake Surge</div>
+            <div class="text-2xl font-extrabold font-mono text-slate-900 dark:text-white mt-1">12.69% <span class="text-xs text-emerald-500">+11.86% 股数</span></div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+              Q3 净增持拼多多 296.88万股至 2,799.09万股（$21.82亿），结合段永平多次晒出的 PDD Sell Put 交割单，实现低成本吸筹。
+            </p>
+          </div>
+
+          <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="text-xs font-bold text-teal-600 dark:text-teal-400 uppercase">Covered Call Exercise</div>
+            <div class="text-2xl font-extrabold font-mono text-slate-900 dark:text-white mt-1">NVDA -63.1%</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+              Q3 英伟达减少 396.12万股、苹果减少 21.76%，很大程度源于股价大涨触发 Covered Call 行权交割，回笼数十亿美元现金。
+            </p>
+          </div>
+
+          <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase">SpaceX New Entry</div>
+            <div class="text-2xl font-extrabold font-mono text-slate-900 dark:text-white mt-1">$30.16M <span class="text-xs text-mogold-500">19.99万股</span></div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+              Q3 唯一新建仓 SpaceX A类普通股（SPCX），叠加特斯拉增持 +20.70% 至 $14.48亿，马斯克系硬科技占组合达 8.60%。
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. 交互式 Chart.js 双轴图：2025Q3–2026Q3 H&H 13F 市值演进与成长双锋权重跃升 -->
+        <div class="bg-white dark:bg-navy-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white text-base">2025Q3–2026Q3 段永平 H&amp;H 13F 总市值演进 vs 拼多多+特斯拉合计权重（%）跃升</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">随着苹果与英伟达高位期权交割回笼现金，段永平持续将资金注入拼多多（PDD）与特斯拉（TSLA），二者合计权重从 9.2% 飙升至 21.11%</p>
+            </div>
+            <span class="text-xs font-mono font-bold text-mogold-700 dark:text-mogold-400 bg-mogold-500/15 px-2.5 py-1 rounded">PDD+TSLA 权重翻倍至 21.11%</span>
+          </div>
+          <div class="relative h-72 w-full">
+            <canvas id="valEvolutionChart"></canvas>
+          </div>
+        </div>
+
+        <!-- 3. 交互式组件：段永平“核心资产复利 + Sell Put / Covered Call 期权权利金增强”动态推演器 -->
+        <div class="bg-gradient-to-br from-navy-900 via-navy-800 to-slate-900 rounded-2xl p-6 sm:p-8 text-white border border-slate-700 shadow-xl space-y-6 no-print">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-4 border-b border-slate-700/80">
+            <div>
+              <div class="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-wider text-mogold-400 font-bold">
+                <span>H&amp;H COMPOUNDING &amp; OPTION ENGINE · 大道复利与期权收租模拟器</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white mt-1">镜像段永平“四大核心重仓 + 100%现金担保期权增强”长期净值复利推演器</h3>
+              <p class="text-xs text-slate-400 mt-0.5">基准组合映射：AAPL (41.1%) + BRK.B (24.2%) + PDD (12.7%) + TSLA (8.4%) + 其余 (13.6%) | 支持期权权利金年化复投测算</p>
+            </div>
+            <label class="inline-flex items-center space-x-2.5 px-3.5 py-2 rounded-xl bg-mogold-500/15 border border-mogold-400/30 text-xs font-semibold text-mogold-300 cursor-pointer shrink-0">
+              <input type="checkbox" id="drip-toggle" checked onchange="updateDividendSimulator()" class="w-4 h-4 rounded accent-[#F59E0B] cursor-pointer">
+              <span>启用 Sell Put / Covered Call 期权权利金增强 (+2.5%/年复投增益)</span>
+            </label>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <!-- 左侧参数控制区 -->
+            <div class="lg:col-span-5 space-y-4 text-xs">
+              <!-- 本金滑块 -->
+              <div>
+                <div class="flex justify-between mb-1.5">
+                  <span class="text-slate-300 font-medium">初始配置本金 (USD)</span>
+                  <span id="sim-principal-label" class="font-mono font-bold text-white text-sm">$100,000</span>
+                </div>
+                <input id="sim-principal" type="range" min="10000" max="1000000" step="10000" value="100000" oninput="updateDividendSimulator()" class="w-full accent-[#F59E0B] cursor-pointer">
+              </div>
+
+              <!-- 年限滑块 -->
+              <div>
+                <div class="flex justify-between mb-1.5">
+                  <span class="text-slate-300 font-medium">长期持有年限 (Years)</span>
+                  <span id="sim-years-label" class="font-mono font-bold text-white text-sm">10 年</span>
+                </div>
+                <input id="sim-years" type="range" min="1" max="20" step="1" value="10" oninput="updateDividendSimulator()" class="w-full accent-[#F59E0B] cursor-pointer">
+              </div>
+
+              <!-- 内生账面价值增速滑块 -->
+              <div>
+                <div class="flex justify-between mb-1.5">
+                  <span class="text-slate-300 font-medium">底层企业内生自由现金流与回购年化增速</span>
+                  <span id="sim-growth-label" class="font-mono font-bold text-emerald-400 text-sm">12.0%</span>
+                </div>
+                <input id="sim-growth" type="range" min="6" max="20" step="0.5" value="12.0" oninput="updateDividendSimulator()" class="w-full accent-[#10B981] cursor-pointer">
+              </div>
+
+              <!-- 期末目标估值乘数选择按钮组 -->
+              <div class="pt-1">
+                <div class="text-slate-300 font-medium mb-2">期末市场估值环境（Valuation Regime Multiple）情景：</div>
+                <div class="grid grid-cols-3 gap-2" id="tax-btn-group">
+                  <button type="button" onclick="setPbMultiple(0.85)" data-pb="0.85" class="tax-btn px-2 py-2 rounded-lg text-[11px] font-medium bg-navy-950/70 text-slate-300 border border-slate-700 hover:border-mogold-400 transition cursor-pointer">
+                    0.85x 估值压缩<br><span class="text-[10px] text-slate-400">逆风折价期</span>
+                  </button>
+                  <button type="button" onclick="setPbMultiple(1.00)" data-pb="1.0" class="tax-btn active px-2 py-2 rounded-lg text-[11px] font-bold bg-mogold-500 text-navy-950 border border-mogold-400 shadow transition cursor-pointer">
+                    1.00x 锚定内生<br><span class="text-[10px] text-navy-900">估值中性稳态</span>
+                  </button>
+                  <button type="button" onclick="setPbMultiple(1.20)" data-pb="1.2" class="tax-btn px-2 py-2 rounded-lg text-[11px] font-medium bg-navy-950/70 text-slate-300 border border-slate-700 hover:border-mogold-400 transition cursor-pointer">
+                    1.20x 戴维斯双击<br><span class="text-[10px] text-slate-400">AI与出海重估</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 右侧四大实时测算结果卡片 -->
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="bg-navy-950/80 rounded-xl p-5 border border-slate-800">
+                <div class="text-xs text-slate-400">期末预计组合总净值 (USD)</div>
+                <div id="sim-final-value" class="text-2xl sm:text-3xl font-mono font-extrabold text-white mt-1.5">$387,309</div>
+                <div id="sim-total-return" class="text-xs font-semibold text-emerald-400 mt-1.5">累计总回报 +287.3% (CAGR 14.5%)</div>
+              </div>
+
+              <div class="bg-navy-950/80 rounded-xl p-5 border border-slate-800">
+                <div class="text-xs text-slate-400">期权增强累计额外贡献净值</div>
+                <div id="sim-annual-div" class="text-2xl sm:text-3xl font-mono font-extrabold text-mogold-400 mt-1.5">+$76,724</div>
+                <div id="sim-monthly-div" class="text-xs text-slate-400 mt-1.5">无期权纯持股期末净值：$310,585</div>
+              </div>
+
+              <div class="bg-navy-950/80 rounded-xl p-5 border border-slate-800">
+                <div class="text-xs text-slate-400">期末双核压舱石 (AAPL+BRK.B) 归属额</div>
+                <div id="sim-yoc" class="text-2xl sm:text-3xl font-mono font-extrabold text-teal-400 mt-1.5">$252,835</div>
+                <div class="text-xs text-slate-400 mt-1.5">按 65.28% 黄金底仓权重映射的稳健核心资产</div>
+              </div>
+
+              <div class="bg-navy-950/80 rounded-xl p-5 border border-slate-800">
+                <div class="text-xs text-slate-400">期末进攻双翼 (PDD+TSLA) 归属额</div>
+                <div id="sim-cum-div" class="text-2xl sm:text-3xl font-mono font-extrabold text-emerald-400 mt-1.5">$81,761</div>
+                <div id="sim-shares-end" class="text-xs text-slate-400 mt-1.5">按 21.11% 权重映射的拼多多与特斯拉高弹性资产</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. 市场对段永平 2026Q3 调仓的多空核心分歧对比 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-emerald-50/70 dark:bg-emerald-950/20 rounded-2xl p-6 border border-emerald-200 dark:border-emerald-800/60">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-bold text-emerald-700 dark:text-emerald-400 text-base">看多与赞誉论点 (Bull Thesis)</span>
+              <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300">知行合一 · 逆向大师</span>
+            </div>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-start space-x-2"><span class="text-emerald-600 font-bold">✓</span><span><strong>极度克制的获利了结与逆向加码：</strong>在 AI 算力狂热期通过 Covered Call 顺势锁定部分 NVDA/CRDO 暴利，反手在市场质疑跨境关税与电动车竞争时大举加仓低估值的 PDD（+11.9%）与 TSLA（+20.7%）。</span></li>
+              <li class="flex items-start space-x-2"><span class="text-emerald-600 font-bold">✓</span><span><strong>果断斩断平庸、集中优势兵力：</strong>彻底清仓阿里巴巴（BABA），将中概电商筹码 100% 集中至人均创利与供应链效率最强的拼多多，杜绝“为了分散而分散”。</span></li>
+              <li class="flex items-start space-x-2"><span class="text-emerald-600 font-bold">✓</span><span><strong>认知持续进化、拥抱马斯克硬科技：</strong>段永平敢于修正早年对马斯克的看法，不仅将特斯拉买成第四大重仓（$14.48亿），更在 Q3 拿下稀缺的 SpaceX 股权，展现出极强的学习迭代力。</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-rose-50/70 dark:bg-rose-950/20 rounded-2xl p-6 border border-rose-200 dark:border-rose-800/60">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-bold text-rose-700 dark:text-rose-400 text-base">审慎与风险关切 (Bear / Risk Thesis)</span>
+              <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300">卖飞风险 · 地缘关税敞口</span>
+            </div>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-start space-x-2"><span class="text-rose-600 font-bold">!</span><span><strong>Covered Call 在超级主升浪中的“卖飞”成本：</strong>段永平本人也多次坦言，卖 Call 虽然能收权利金，但在英伟达与苹果的强趋势行情中容易导致优质筹码“被 call 走”，后续高价接回存在踏空磨擦。</span></li>
+              <li class="flex items-start space-x-2"><span class="text-rose-600 font-bold">!</span><span><strong>拼多多（12.69%）面临的海外合规与零分红折价：</strong>Temu 在欧美面临小额包裹免税政策收紧与关税博弈，且 PDD 账上坐拥巨额现金却迟迟未开启回购分红，短期估值压制明显。</span></li>
+              <li class="flex items-start space-x-2"><span class="text-rose-600 font-bold">!</span><span><strong>单一重仓苹果（41.07%）的硬件周期与估值敏感度：</strong>苹果依然占据逾四成仓位，若 Apple Intelligence 换机周期低于预期或遭遇反垄断重罚，将直接牵动 H&amp;H 组合整体净值。</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+      五、 投资决策与“抄大道作业”风险配置框架 (Investment Decision & Allocation)
+      ========================================================= -->
+      <section id="sec-inv" class="scroll-mt-20 space-y-6">
+        <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-mogold-600 dark:text-mogold-400">Section 05 · Portfolio Replication &amp; Risk Boundaries</span>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">五、 投资决策与“抄大道作业”配置框架：三情景推演与四大常见误区</h2>
+          </div>
+          <span class="text-xs text-slate-500 dark:text-slate-400">核心准则：“抄作业只能抄逻辑，不能抄代码；看不懂公司，跌20%你就会拿不住”</span>
+        </div>
+
+        <!-- 1. 三情景估值推演卡片 (Bull / Base / Bear) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- 牛市情景 -->
+          <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-emerald-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2.5 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-xs font-bold">牛市情景 (Bull Case)</span>
+                <span class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">概率：30%</span>
+              </div>
+              <div class="text-xl font-extrabold font-mono text-slate-900 dark:text-white mt-2">组合净值重返 $21.0B–$23.5B</div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+                <strong>核心假设：</strong>拼多多（PDD）宣布启动百亿美元级回购或派息引爆估值修复（由 ~9x PE 修复至 15x PE）；特斯拉 FSD 完全无人驾驶商业化加速；苹果 AI 生态与伯克希尔创历史新高。
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+              12个月组合潜在上行空间：+22.0% 至 +36.7%
+            </div>
+          </div>
+
+          <!-- 基准情景 -->
+          <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-mogold-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2.5 py-0.5 rounded bg-mogold-500/15 text-mogold-700 dark:text-mogold-400 text-xs font-bold">基准情景 (Base Case)</span>
+                <span class="font-mono text-xs font-bold text-mogold-600 dark:text-mogold-400">概率：50%</span>
+              </div>
+              <div class="text-xl font-extrabold font-mono text-slate-900 dark:text-white mt-2">稳步复利 $18.8B–$20.5B</div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+                <strong>核心假设：</strong>AAPL 与 BRK.B 双核提供年化 10%–12% 稳健复利，段永平通过 Sell Put 陆续接回部分英伟达筹码并持续收取拼多多与苹果期权权利金，净值稳健创新高。
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-mogold-600 dark:text-mogold-400">
+              12个月稳健预期回报：+9.5% 至 +19.2%
+            </div>
+          </div>
+
+          <!-- 熊市情景 -->
+          <div class="report-card bg-white dark:bg-navy-900 rounded-2xl p-6 border-t-4 border-t-rose-500 border-x border-b border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2.5 py-0.5 rounded bg-rose-500/15 text-rose-600 dark:text-rose-400 text-xs font-bold">熊市情景 (Bear Case)</span>
+                <span class="font-mono text-xs font-bold text-rose-600 dark:text-rose-400">概率：20%</span>
+              </div>
+              <div class="text-xl font-extrabold font-mono text-slate-900 dark:text-white mt-2">回撤整固 $14.5B–$15.8B</div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+                <strong>核心假设：</strong>美股科技硬件与电动车板块遭遇高估值杀跌，叠加跨境贸易摩擦冲击拼多多海外利润率；但占比 24.21% 的伯克希尔（手握 $3,523亿国债现金）将发挥极强抗跌缓冲作用。
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-rose-600 dark:text-rose-400">
+              潜在最大回撤：-8.1% 至 -15.6%（BRK.B 与现金提供强力托底）
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. 四大核心风险矩阵 -->
+        <div>
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-3">跟踪段永平 H&amp;H 13F 持仓的四大核心认知误区与风险边界</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2 py-0.5 rounded bg-rose-500/10 text-rose-600 dark:text-rose-400 text-xs font-bold">01 · 误把“期权行权交割”当成“基本面看空清仓”</span>
+                <span class="text-xs font-mono text-rose-500 font-semibold">误判率：极高</span>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm">13F 不披露 Short Put，且 Covered Call 行权会导致正股骤降</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                SEC 13F 规则不要求披露卖出的看跌期权（Short Put）。当段永平卖出 Covered Call 被行权导致正股减少（如 Q3 NVDA 减少 63%），紧接着他又卖出 Put 准备接回时，13F 表上只会看到“正股大减 63%”，极易误导散户以为他看空逃顶。
+              </p>
+            </div>
+
+            <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold">02 · 盲目模仿 Sell Put 却忽视“100% 现金担保”底线</span>
+                <span class="text-xs font-mono text-amber-500 font-semibold">危险度：致命</span>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm">段永平卖 Put 永远备足 100% 接货现金，散户加杠杆卖 Put 极易爆仓</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                段永平反复告诫：“千万不要用保证金杠杆裸卖 Put！”他卖 Put 的前提是账上躺着几十亿美元短期美债或现金，随时欢迎跌下来行权接货；普通投资者若用融资保证金模仿，遇到极端行情将面临穿仓强平。
+              </p>
+            </div>
+
+            <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2 py-0.5 rounded bg-teal-500/10 text-teal-600 dark:text-teal-400 text-xs font-bold">03 · 混淆“41% 信仰重仓”与“0.01% 娱乐观察仓”</span>
+                <span class="text-xs font-mono text-slate-500 font-semibold">关注度：高</span>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm">PLTR (0.05%) / SNPS (0.03%) / SNOW (0.01%) / TEM (0.01%) 仅为观察哨</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                对管理 $171.91亿的 H&amp;H 而言，几百万美元的持仓（占比 0.01%–0.05%）仅相当于普通账户买几百块钱的“跟踪观察哨”或身边朋友推荐的研究样本，绝不可将其与苹果（41.1%）、伯克希尔（24.2%）、拼多多（12.7%）相提并论。
+              </p>
+            </div>
+
+            <div class="report-card bg-white dark:bg-navy-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-bold">04 · 忽略 A 股贵州茅台与港股腾讯控股的表外压舱作用</span>
+                <span class="text-xs font-mono text-slate-500 font-semibold">关注度：中高</span>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm">13F 清仓 BABA 不代表看空中国核心资产，茅台+腾讯+拼多多重仓依旧</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                部分媒体看到 H&amp;H 清仓阿里就渲染“撤离中国资产”，实则段永平在美股将拼多多加仓至 $21.82亿（12.69%），且在 A 股与港股长期持有数十亿美元的贵州茅台与腾讯控股，对中国顶级商业模式的持仓力度极为深厚。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 机构级组合配置纪律横幅 -->
+        <div class="bg-gradient-to-r from-navy-900 to-navy-800 rounded-2xl p-6 text-white border border-slate-700 shadow-md">
+          <h3 class="text-base font-bold text-mogold-400 mb-4 flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>普通投资者如何正确借鉴段永平 2026Q3 13F？（三大实操法则）</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+              <div class="font-bold text-white mb-1">1. 聚焦“跨市场五大核心”，摒弃边缘杂音</div>
+              <p class="text-slate-300 leading-relaxed">
+                段永平真正重注的只有五家公司：<strong>美股的苹果（AAPL）、伯克希尔（BRK.B）、拼多多（PDD）、特斯拉（TSLA），以及表外的贵州茅台与腾讯控股</strong>。研究透这几家公司的护城河，远比追逐 0.01% 的小票更有价值。
+              </p>
+            </div>
+            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+              <div class="font-bold text-mogold-400 mb-1">2. 学习“大跌时敢于下重手”的定力</div>
+              <p class="text-slate-300 leading-relaxed">
+                无论是 2013 年塑化剂风波重仓茅台、2022 年末抄底腾讯，还是 2026Q3 逆势加仓拼多多（+11.9%）与特斯拉（+20.7%），段永平的超额收益均来自<strong>“在看懂商业模式的前提下，利用市场恐慌大口吸筹”</strong>。
+              </p>
+            </div>
+            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+              <div class="font-bold text-emerald-400 mb-1">3. 若看不懂个股，直接配置 BRK.B 或标普 500</div>
+              <p class="text-slate-300 leading-relaxed">
+                段永平多次建议普通投资者：如果无法判断一家公司 10 年后的现金流，最省心且能跑赢 90% 基金经理的做法，就是像他把 <strong>24.21% 仓位放在 BRK.B</strong> 一样，长期定投伯克希尔B或标普 500 指数。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+      六、 季度 13F & 雪球动态跟踪 KPI 交互式核查清单 (Checklist)
+      ========================================================= -->
+      <section id="sec-kpi" class="scroll-mt-20 space-y-6">
+        <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Section 06 · Quarterly 13F &amp; Snowball Tracking KPIs</span>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">六、 季度 13F 与雪球“大道无形我有型”跟踪核查清单（Checklist）</h2>
+          </div>
+          <div class="flex items-center space-x-2 no-print">
+            <span id="kpi-progress-badge" class="px-3 py-1 rounded-full bg-mogold-500/15 text-mogold-700 dark:text-mogold-400 text-xs font-bold">已核查 4 / 6 项 (67%)</span>
+            <button onclick="resetKpiChecklist()" class="px-2.5 py-1 rounded-lg bg-slate-200/80 dark:bg-navy-800 hover:bg-slate-300 dark:hover:bg-navy-700 text-xs font-medium text-slate-700 dark:text-slate-300 transition cursor-pointer">重置清单</button>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-navy-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">
+            点击勾选季度 13F 披露及段永平雪球发言后已验证达标的核心指标（勾选状态自动本地保存），立体追踪 H&amp;H 资本配置动向：
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5" id="kpi-checklist">
+            <!-- KPI 1 -->
+            <label class="flex items-start space-x-3 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-navy-800/50 cursor-pointer transition">
+              <input type="checkbox" id="kpi-1" checked onchange="updateKpiChecklist()" class="mt-1 w-4 h-4 rounded accent-[#D97706] focus:ring-mogold-500">
+              <div class="flex-1">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="font-bold text-sm text-slate-900 dark:text-white">1. 双核压舱石（AAPL + BRK.B）合计权重是否稳居 60% 以上</span>
+                  <span class="text-[11px] font-mono text-mogold-600 dark:text-mogold-400 font-semibold shrink-0">核心定力锚</span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                  2026Q3 苹果（41.07%）与伯克希尔B（24.21%）合计占比达 65.28%（$112.22亿），虽有期权交割微调但压舱石地位极其稳固。
+                </p>
+              </div>
+            </label>
+
+            <!-- KPI 2 -->
+            <label class="flex items-start space-x-3 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-navy-800/50 cursor-pointer transition">
+              <input type="checkbox" id="kpi-2" checked onchange="updateKpiChecklist()" class="mt-1 w-4 h-4 rounded accent-[#D97706] focus:ring-mogold-500">
+              <div class="flex-1">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="font-bold text-sm text-slate-900 dark:text-white">2. 拼多多（PDD）持仓股数是否突破 2,800万股及分红回购催化</span>
+                  <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold shrink-0">中概独苗重仓</span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                  Q3 增持 +11.86% 至 2,799.09万股（权重首破两位数达 12.69%），同时清仓 BABA；持续追踪 PDD 后续季报现金流与股东回报政策。
+                </p>
+              </div>
+            </label>
+
+            <!-- KPI 3 -->
+            <label class="flex items-start space-x-3 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-navy-800/50 cursor-pointer transition">
+              <input type="checkbox" id="kpi-3" checked onchange="updateKpiChecklist()" class="mt-1 w-4 h-4 rounded accent-[#D97706] focus:ring-mogold-500">
+              <div class="flex-1">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="font-bold text-sm text-slate-900 dark:text-white">3. 特斯拉（TSLA）与 SpaceX（SPCX）马斯克硬科技双翼权重演进</span>
+                  <span class="text-[11px] font-mono text-teal-600 dark:text-teal-400 font-semibold shrink-0">硬科技新引擎</span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                  Q3 特斯拉增持 +20.70% 至 408.00万股（$14.48亿 / 8.42%），并新进 SpaceX 19.99万股（$3,015.69万），跟踪 2026Q4 是否继续加码。
+                </p>
+              </div>
+            </label>
+
+            <!-- KPI 4 -->
+            <label class="flex items-start space-x-3 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-navy-800/50 cursor-pointer transition">
+              <input type="checkbox" id="kpi-4" checked onchange="updateKpiChecklist()" class="mt-1 w-4 h-4 rounded accent-[#D97706] focus:ring-mogold-500">
+              <div class="flex-1">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="font-bold text-sm text-slate-900 dark:text-white">4. 英伟达（NVDA）“被 Call 走”筹码在 Q4 是否通过 Sell Put 接回</span>
+                  <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold shrink-0">AI算力回购验证</span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                  Q3 NVDA 降至 231.95万股（$5.30亿），但段永平于 11 月公开表态“不想急着逃，计划买回部分被 call 走的股票”，重点核查 Q4 股数回升情况。
+                </p>
+              </div>
+            </label>
+
+            <!-- KPI 5 -->
+            <label class="flex items-start space-x-3 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-navy-800/50 cursor-pointer transition">
+              <input type="checkbox" id="kpi-5" onchange="updateKpiChecklist()" class="mt-1 w-4 h-4 rounded accent-[#D97706] focus:ring-mogold-500">
+              <div class="flex-1">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="font-bold text-sm text-slate-900 dark:text-white">5. 西方石油（OXY）、迪士尼（DIS）与联合健康（UNH）锁仓定力</span>
+                  <span class="text-[11px] font-mono text-teal-600 dark:text-teal-400 font-semibold shrink-0">价值防御监测</span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                  Q3 OXY（1,026.5万股 / 3.30%）、DIS（192.0万股 / 1.14%）、UNH（25.5万股 / 0.85%）均保持零减持，观察后续是否随估值修复调整。
+                </p>
+              </div>
+            </label>
+
+            <!-- KPI 6 -->
+            <label class="flex items-start space-x-3 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-navy-800/50 cursor-pointer transition">
+              <input type="checkbox" id="kpi-6" onchange="updateKpiChecklist()" class="mt-1 w-4 h-4 rounded accent-[#D97706] focus:ring-mogold-500">
+              <div class="flex-1">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="font-bold text-sm text-slate-900 dark:text-white">6. 四只 AI 前沿观察仓（PLTR / SNPS / SNOW / TEM）去留动向</span>
+                  <span class="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 font-semibold shrink-0">前沿科技观察哨</span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                  继 Q3 清仓 Circle 与 Innodata 后，观察保留的 Palantir（6万股）、新思科技（1万股）、Snowflake（1万股）、Tempus AI（2万股）是否晋升或退出。
+                </p>
+              </div>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+      页脚免责声明与权威数据源索引 (Disclaimer & Sources Footer)
+      ========================================================= -->
+      <footer class="pt-8 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-3 pb-10">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-semibold text-slate-700 dark:text-slate-300">
+          <span>段永平 H&amp;H International Investment, LLC (CIK: 0001759760) 2026Q3 13F 持仓深度研究报告 · 机构级交互标准版</span>
+          <span>数据基准：2026年11月16日 SEC Form 13F-HR (Accession: 0001759760-26-000008)</span>
+        </div>
+        <div class="flex flex-wrap gap-x-4 gap-y-1 text-[11px]">
+          <span class="font-semibold text-slate-600 dark:text-slate-300">核实数据源链接：</span>
+          <a href="https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026" target="_blank" rel="noopener noreferrer" class="hover:text-mogold-500 underline">13f.info H&amp;H 2026Q3 13F-HR 原件</a>
+          <a href="https://whalewisdom.com/filer/h-h-international-investment-llc" target="_blank" rel="noopener noreferrer" class="hover:text-mogold-500 underline">WhaleWisdom H&amp;H 机构档案</a>
+          <a href="https://www.sec.gov/edgar/browse/?CIK=0001759760" target="_blank" rel="noopener noreferrer" class="hover:text-mogold-500 underline">SEC EDGAR CIK 0001759760 官方检索</a>
+        </div>
+        <p class="leading-relaxed">
+          <strong>免责声明：</strong>本深度研究报告严格基于 H&amp;H International Investment, LLC 向美国证券交易委员会（SEC）提交的 2026Q3 Form 13F-HR（截至 2026 年 9 月 30 日）、2026Q2 Form 13F-HR 及段永平先生公开投资交流记录整理生成。SEC 13F 报告仅反映管理人截至季度末的美国可报告多头权益证券持仓，不包含非美上市证券（如 A 股贵州茅台、港股腾讯控股）、卖出的看跌期权（Short Put）、现金与短期美国国库券。报告中的期权增强复利模拟与三情景估值仅作投资研究与学术交流参考，不构成任何证券买卖建议。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- 交互逻辑与 Chart.js 可视化脚本 -->
+  <script>
+    // ==========================================
+    // 0. 2026Q3 SEC 13F-HR 段永平 H&H 全部 16 个在持条目完整权威数据集
+    // ==========================================
+    const HH_HOLDINGS_2026Q3 = [
+      { rank: 1, sym: 'AAPL', name: 'Apple Inc. (苹果)', sector: '消费电子与iOS生态', shares: 21204200, valK: 7061000, pct: 41.07, q2Shares: 27101480, chgPct: -21.76, status: 'reduced', top10: true, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: '头号信仰压舱石（占13F超4成），2011年重仓至今；Q3股数减少21.76%主要受高位Covered Call期权被行权交割及动态再平衡影响。' },
+      { rank: 2, sym: 'BRK.B', name: 'Berkshire Hathaway B (伯克希尔B)', sector: '多元金融与实业控股', shares: 8261150, valK: 4161000, pct: 24.21, q2Shares: 9124300, chgPct: -9.46, status: 'reduced', top10: true, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: '二号绝对核心（与苹果合计高达65.28%），段永平将其视为“比纯现金更省心的永久复利底座”，Q3微幅调减9.46%。' },
+      { rank: 3, sym: 'PDD', name: 'PDD Holdings Inc. (拼多多)', sector: '跨境与社交电商龙头', shares: 27990900, valK: 2182000, pct: 12.69, q2Shares: 25022100, chgPct: 11.86, status: 'added', top10: true, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: 'Q3逆势加仓296.88万股（+11.86%），权重由9.99%跃升至12.69%首破两位数！清仓阿里后将中概电商仓位100%聚焦于拼多多。' },
+      { rank: 4, sym: 'TSLA', name: 'Tesla Inc. (特斯拉)', sector: '智能电动车与FSD机器人', shares: 4080000, valK: 1448000, pct: 8.42, q2Shares: 3380400, chgPct: 20.70, status: 'added', top10: true, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: 'Q3大举增持69.96万股（+20.70%）至408万股，段永平高度认可马斯克第一性原理及FSD自动驾驶、Optimus机器人的长期颠覆力。' },
+      { rank: 5, sym: 'OXY', name: 'Occidental Petroleum (西方石油)', sector: '传统油气与碳捕集', shares: 10265000, valK: 567900, pct: 3.30, q2Shares: 10265000, chgPct: 0.00, status: 'unchanged', top10: true, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: '跟随巴菲特配置的传统能源现金牛，Q3保持1,026.5万股一股未动，权重升至3.30%反超英伟达跃居第五大重仓。' },
+      { rank: 6, sym: 'NVDA', name: 'NVIDIA Corp. (英伟达)', sector: 'AI算力芯片与CUDA生态', shares: 2319500, valK: 529500, pct: 3.08, q2Shares: 6280700, chgPct: -63.07, status: 'reduced', top10: true, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: 'Q3减持396.12万股（-63.07%），含Covered Call期权被行权交割；段永平明确表示“不看空NVDA，计划买回部分被call走的股票”。' },
+      { rank: 7, sym: 'GOOG', name: 'Alphabet Inc. Class C (谷歌C)', sector: '搜索与Gemini云生态', shares: 2845000, valK: 484800, pct: 2.82, q2Shares: 4863200, chgPct: -41.50, status: 'reduced', top10: true, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: 'Q3主动收缩部分AI搜索与云平台敞口（-41.50%），保留284.5万股（$4.85亿 / 2.82%）核心底仓观察AI对传统搜索商业模式的影响。' },
+      { rank: 8, sym: 'MSFT', name: 'Microsoft Corp. (微软)', sector: '企业软件与Azure云', shares: 510000, valK: 228500, pct: 1.33, q2Shares: 538000, chgPct: -5.20, status: 'reduced', top10: true, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: '稳健防御层科技巨头，凭借Office 365与Azure企业级粘性提供极高确定性现金流，Q3仅微调-5.20%。' },
+      { rank: 9, sym: 'DIS', name: 'The Walt Disney Co. (迪士尼)', sector: '全球IP娱乐与主题公园', shares: 1920000, valK: 196800, pct: 1.14, q2Shares: 1920000, chgPct: 0.00, status: 'unchanged', top10: true, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: '段永平钟爱的百年文化IP与主题乐园护城河资产，Q3锁仓192.0万股不动，静待流媒体利润释放。' },
+      { rank: 10, sym: 'UNH', name: 'UnitedHealth Group (联合健康)', sector: '医疗保险与Optum服务', shares: 255000, valK: 146200, pct: 0.85, q2Shares: 255000, chgPct: 0.00, status: 'unchanged', top10: true, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: '北美商业医疗险与健康管理绝对寡头，Q3保持25.5万股（$1.46亿）锁仓不动，跻身前十大重仓。' },
+      { rank: 11, sym: 'CRDO', name: 'Credo Technology Group', sector: 'AI数据中心高速连接', shares: 2150000, valK: 139600, pct: 0.81, q2Shares: 2507300, chgPct: -14.25, status: 'reduced', top10: false, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: 'AI数据中心AEC高速铜缆与光连接芯片黑马，Q3随股价大幅上涨逢高减持14.25%锁定部分浮盈，仍持有$1.40亿。' },
+      { rank: 12, sym: 'SPCX', name: 'SpaceX Class A (太空探索技术)', sector: '商业航天与Starlink星链', shares: 199900, valK: 30157, pct: 0.18, q2Shares: 0, chgPct: 100.00, status: 'added', top10: false, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: '2026Q3唯一新建仓标的！买入19.99万股SpaceX A类普通股（市值$3,015.69万），与特斯拉共同构成马斯克硬科技双翼。' },
+      { rank: 13, sym: 'PLTR', name: 'Palantir Technologies (帕兰提尔)', sector: '企业与国防AI操作系统', shares: 60000, valK: 9420, pct: 0.05, q2Shares: 60000, chgPct: 0.00, status: 'unchanged', top10: false, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: 'AI企业级应用层观察仓位，Q3维持6.0万股（$942万）不变，持续跟踪AIP平台在政企端的商业化落地。' },
+      { rank: 14, sym: 'SNPS', name: 'Synopsys Inc. (新思科技)', sector: 'EDA芯片设计软件寡头', shares: 10000, valK: 5380, pct: 0.03, q2Shares: 10000, chgPct: 0.00, status: 'unchanged', top10: false, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: '全球半导体EDA设计软件双寡头之一（芯片上游“卖水人”），Q3维持1.0万股观察仓不变。' },
+      { rank: 15, sym: 'SNOW', name: 'Snowflake Inc. (雪花云数据)', sector: '跨云数据仓库平台', shares: 10000, valK: 1920, pct: 0.01, q2Shares: 10000, chgPct: 0.00, status: 'unchanged', top10: false, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: '企业云原生数据湖观察仓，Q3维持1.0万股不变。' },
+      { rank: 16, sym: 'TEM', name: 'Tempus AI Inc. (Tempus医疗AI)', sector: '精准医疗与基因组AI', shares: 20000, valK: 1180, pct: 0.01, q2Shares: 20000, chgPct: 0.00, status: 'unchanged', top10: false, url: 'https://13f.info/13f/000175976026000008-h-h-international-investment-llc-q3-2026', note: '前沿AI医疗与肿瘤基因组诊断探索仓位，Q3维持2.0万股不变。' }
+    ];
+
+    let currentFilterCategory = 'all';
+    let currentSearchQuery = '';
+
+    function formatValueBillions(valK) {
+      if (valK >= 1000000) {
+        return '$' + (valK / 1000000).toFixed(2) + 'B';
+      }
+      return '$' + (valK / 1000).toFixed(2) + 'M';
+    }
+
+    function renderHoldingsTable() {
+      const tbody = document.getElementById('holdings-table-body');
+      const countLabel = document.getElementById('table-count-label');
+      const q = currentSearchQuery.trim().toLowerCase();
+
+      const filtered = HH_HOLDINGS_2026Q3.filter(item => {
+        let matchCat = true;
+        if (currentFilterCategory === 'top10') matchCat = item.top10;
+        else if (currentFilterCategory === 'added') matchCat = item.status === 'added';
+        else if (currentFilterCategory === 'reduced') matchCat = item.status === 'reduced';
+        else if (currentFilterCategory === 'unchanged') matchCat = item.status === 'unchanged';
+
+        let matchQuery = true;
+        if (q) {
+          matchQuery = item.sym.toLowerCase().includes(q) ||
+                       item.name.toLowerCase().includes(q) ||
+                       item.sector.toLowerCase().includes(q) ||
+                       item.note.toLowerCase().includes(q);
+        }
+        return matchCat && matchQuery;
+      });
+
+      let sumValK = 0;
+      let sumPct = 0;
+      filtered.forEach(d => {
+        sumValK += d.valK;
+        sumPct += d.pct;
+      });
+
+      countLabel.textContent = `当前显示：${filtered.length} / 16 个 SEC 13F 在持条目（合计市值 $${(sumValK / 1000000).toFixed(2)}B · 占 13F 总组合 ${sumPct.toFixed(2)}%）`;
+
+      tbody.innerHTML = filtered.map(item => {
+        let badgeHtml = '';
+        if (item.sym === 'SPCX') {
+          badgeHtml = '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-teal-500/15 text-teal-700 dark:text-teal-300 border border-teal-500/30">★ Q3 新进建仓</span>';
+        } else if (item.chgPct > 0) {
+          badgeHtml = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">▲ +${item.chgPct.toFixed(2)}%</span>`;
+        } else if (item.chgPct < 0) {
+          badgeHtml = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-400">▼ ${item.chgPct.toFixed(2)}%</span>`;
+        } else {
+          badgeHtml = '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-200/80 dark:bg-navy-800 text-slate-600 dark:text-slate-400">持平 (0.0%)</span>';
+        }
+
+        const rowHighlight = item.rank <= 4
+          ? 'bg-mogold-500/5 dark:bg-mogold-500/10 font-medium'
+          : 'hover:bg-slate-50 dark:hover:bg-navy-800/40 transition';
+
+        return `
+          <tr class="${rowHighlight}">
+            <td class="py-3.5 px-4 font-mono font-bold text-slate-500 dark:text-slate-400">#${String(item.rank).padStart(2, '0')}</td>
+            <td class="py-3.5 px-4">
+              <div class="flex items-center space-x-2">
+                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="px-2 py-0.5 rounded bg-navy-900 dark:bg-mogold-500 text-mogold-400 dark:text-navy-950 font-mono text-xs font-extrabold hover:opacity-85">${item.sym} ↗</a>
+                <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">${item.name}</span>
+              </div>
+            </td>
+            <td class="py-3.5 px-3 text-xs text-slate-600 dark:text-slate-300">${item.sector}</td>
+            <td class="py-3.5 px-4 text-right font-mono text-xs sm:text-sm text-slate-800 dark:text-slate-200">${item.shares.toLocaleString('en-US')}</td>
+            <td class="py-3.5 px-4 text-right font-mono font-bold text-slate-900 dark:text-white">${formatValueBillions(item.valK)}</td>
+            <td class="py-3.5 px-3 text-right font-mono font-bold text-mogold-600 dark:text-mogold-400">${item.pct.toFixed(2)}%</td>
+            <td class="py-3.5 px-4 text-center">${badgeHtml}</td>
+            <td class="py-3.5 px-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${item.note}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterHoldings(category) {
+      currentFilterCategory = category;
+      document.querySelectorAll('#comp-filter-group .comp-filter-btn').forEach(btn => {
+        if (btn.dataset.filter === category) {
+          btn.classList.add('bg-mogold-500', 'text-navy-950', 'font-semibold', 'shadow-sm');
+          btn.classList.remove('bg-white', 'dark:bg-navy-800', 'text-slate-600', 'dark:text-slate-300', 'border', 'font-medium');
+        } else {
+          btn.classList.remove('bg-mogold-500', 'text-navy-950', 'font-semibold', 'shadow-sm');
+          btn.classList.add('bg-white', 'dark:bg-navy-800', 'text-slate-600', 'dark:text-slate-300', 'border', 'font-medium');
+        }
+      });
+      renderHoldingsTable();
+    }
+
+    function searchHoldings() {
+      currentSearchQuery = document.getElementById('holding-search-input').value || '';
+      renderHoldingsTable();
+    }
+
+    // ==========================================
+    // 1. 一键导出独立 .html 网页文件功能
+    // ==========================================
+    function downloadHtmlFile() {
+      const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Duan_Yongping_HH_Holdings_2026Q3.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      const toast = document.getElementById('export-toast');
+      if (toast) {
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+          toast.classList.remove('flex');
+        }, 3200);
+      }
+    }
+
+    // ==========================================
+    // 2. 亮色 / 深色模式切换（同步刷新所有 Chart.js 图表）
+    // ==========================================
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      updateChartsTheme();
+    }
+
+    // ==========================================
+    // 3. 移动端抽屉菜单切换
+    // ==========================================
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-drawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    // ==========================================
+    // 4. 阅读进度条与左侧导航滚动联动高亮
+    // ==========================================
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('#desktop-nav .nav-link');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = `${Math.min(100, Math.max(0, scrollPercent))}%`;
+
+      let currentId = 'sec-exec';
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 160;
+        if (scrollTop >= top) {
+          currentId = sec.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        const numSpan = link.querySelector('span span');
+        if (numSpan) {
+          numSpan.classList.remove('text-mogold-400');
+          numSpan.classList.add('text-slate-500');
+        }
+        if (link.dataset.target === currentId) {
+          link.classList.add('active');
+          if (numSpan) {
+            numSpan.classList.remove('text-slate-500');
+            numSpan.classList.add('text-mogold-400');
+          }
+        }
+      });
+    });
+
+    // ==========================================
+    // 5. 段永平 H&H 复利与期权收租增强动态模拟器
+    // ==========================================
+    let targetValuationMultiple = 1.00; // 默认 1.00x 锚定内生稳态估值
+
+    function setPbMultiple(mult) {
+      targetValuationMultiple = mult;
+      document.querySelectorAll('#tax-btn-group .tax-btn').forEach(btn => {
+        const btnMult = parseFloat(btn.dataset.pb);
+        if (Math.abs(btnMult - mult) < 0.01) {
+          btn.className = 'tax-btn active px-2 py-2 rounded-lg text-[11px] font-bold bg-mogold-500 text-navy-950 border border-mogold-400 shadow transition cursor-pointer';
+          const subSpan = btn.querySelector('span');
+          if (subSpan) subSpan.className = 'text-[10px] text-navy-900';
+        } else {
+          btn.className = 'tax-btn px-2 py-2 rounded-lg text-[11px] font-medium bg-navy-950/70 text-slate-300 border border-slate-700 hover:border-mogold-400 transition cursor-pointer';
+          const subSpan = btn.querySelector('span');
+          if (subSpan) subSpan.className = 'text-[10px] text-slate-400';
+        }
+      });
+      updateDividendSimulator();
+    }
+
+    function updateDividendSimulator() {
+      const principal = parseFloat(document.getElementById('sim-principal').value);
+      const years = parseInt(document.getElementById('sim-years').value, 10);
+      const organicGrowthPct = parseFloat(document.getElementById('sim-growth').value);
+      const optionBoost = document.getElementById('drip-toggle').checked;
+
+      document.getElementById('sim-principal-label').textContent = '$' + principal.toLocaleString('en-US');
+      document.getElementById('sim-years-label').textContent = years + ' 年';
+      document.getElementById('sim-growth-label').textContent = organicGrowthPct.toFixed(1) + '%';
+
+      const optionAnnualYield = optionBoost ? 0.025 : 0.0;
+      const totalAnnualGrowth = (organicGrowthPct / 100) + optionAnnualYield;
+
+      const baseOnlyVal = principal * Math.pow(1 + (organicGrowthPct / 100), years) * targetValuationMultiple;
+      const finalPortfolioVal = principal * Math.pow(1 + totalAnnualGrowth, years) * targetValuationMultiple;
+      const optionExtraGain = finalPortfolioVal - baseOnlyVal;
+
+      const totalReturnPct = ((finalPortfolioVal - principal) / principal) * 100;
+      const cagrPct = (Math.pow(finalPortfolioVal / principal, 1 / years) - 1) * 100;
+
+      // 映射双核（AAPL+BRK.B = 65.28%）与进攻双翼（PDD+TSLA = 21.11%）
+      const coreTwoVal = finalPortfolioVal * 0.6528;
+      const growthTwoVal = finalPortfolioVal * 0.2111;
+
+      document.getElementById('sim-final-value').textContent = '$' + Math.round(finalPortfolioVal).toLocaleString('en-US');
+      document.getElementById('sim-total-return').textContent = `累计总回报 +${totalReturnPct.toFixed(1)}% (年化 CAGR ${cagrPct.toFixed(1)}%)`;
+      document.getElementById('sim-annual-div').textContent = '+$' + Math.round(optionExtraGain).toLocaleString('en-US');
+      document.getElementById('sim-monthly-div').textContent = `无期权纯持股期末净值 (@${targetValuationMultiple.toFixed(2)}x)：$${Math.round(baseOnlyVal).toLocaleString('en-US')}`;
+      document.getElementById('sim-yoc').textContent = '$' + Math.round(coreTwoVal).toLocaleString('en-US');
+      document.getElementById('sim-cum-div').textContent = '$' + Math.round(growthTwoVal).toLocaleString('en-US');
+      document.getElementById('sim-shares-end').textContent = `按 PDD (12.69%) + TSLA (8.42%) 合计 21.11% 权重映射`;
+    }
+
+    // ==========================================
+    // 6. KPI 核查清单状态持久化与计数更新
+    // ==========================================
+    const KPI_STORAGE_KEY = 'duan_hh_13f_kpi_state_v1';
+
+    function loadKpiChecklist() {
+      try {
+        const saved = localStorage.getItem(KPI_STORAGE_KEY);
+        if (saved) {
+          const stateMap = JSON.parse(saved);
+          document.querySelectorAll('#kpi-checklist input[type="checkbox"]').forEach(cb => {
+            if (typeof stateMap[cb.id] === 'boolean') {
+              cb.checked = stateMap[cb.id];
+            }
+          });
+        }
+      } catch (e) {
+        // 忽略本地存储权限限制
+      }
+      updateKpiChecklist();
+    }
+
+    function updateKpiChecklist() {
+      const checkboxes = document.querySelectorAll('#kpi-checklist input[type="checkbox"]');
+      const total = checkboxes.length;
+      let checkedCount = 0;
+      const stateMap = {};
+
+      checkboxes.forEach(cb => {
+        stateMap[cb.id] = cb.checked;
+        if (cb.checked) checkedCount++;
+      });
+
+      const pct = Math.round((checkedCount / total) * 100);
+      document.getElementById('kpi-progress-badge').textContent = `已核查 ${checkedCount} / ${total} 项 (${pct}%)`;
+
+      try {
+        localStorage.setItem(KPI_STORAGE_KEY, JSON.stringify(stateMap));
+      } catch (e) {
+        // 忽略本地存储权限限制
+      }
+    }
+
+    function resetKpiChecklist() {
+      document.querySelectorAll('#kpi-checklist input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
+      });
+      updateKpiChecklist();
+    }
+
+    // ==========================================
+    // 7. Chart.js 数据可视化初始化与主题自适应
+    // ==========================================
+    let bizChartInstance = null;
+    let radarChartInstance = null;
+    let compMarginChartInstance = null;
+    let valEvolutionChartInstance = null;
+    let currentBizMode = 'sector_evolution';
+
+    function getChartColors() {
+      const isDark = document.documentElement.classList.contains('dark');
+      return {
+        text: isDark ? '#CBD5E1' : '#475569',
+        grid: isDark ? 'rgba(51, 65, 85, 0.5)' : 'rgba(226, 232, 240, 0.85)',
+        radarAngle: isDark ? 'rgba(71, 85, 105, 0.6)' : 'rgba(203, 213, 225, 0.85)'
+      };
+    }
+
+    function initBizChart() {
+      const ctx = document.getElementById('bizArchitectureChart').getContext('2d');
+      const colors = getChartColors();
+
+      // 视图 A：2025Q3–2026Q3 H&H 13F 持仓市值结构演进 ($B)
+      const evoConfig = {
+        type: 'bar',
+        data: {
+          labels: ['2025Q3', '2025Q4', '2026Q1', '2026Q2', '2026Q3'],
+          datasets: [
+            {
+              label: '压舱石双核市值 (AAPL + BRK.B, $B)',
+              data: [11.85, 12.10, 11.60, 13.08, 11.22],
+              backgroundColor: '#F59E0B',
+              borderRadius: 4,
+              stack: 'portfolio'
+            },
+            {
+              label: '高成长进攻双翼 (PDD + TSLA, $B)',
+              data: [1.46, 1.85, 2.24, 3.05, 3.63],
+              backgroundColor: '#10B981',
+              borderRadius: 4,
+              stack: 'portfolio'
+            },
+            {
+              label: '其余 12 只持仓市值 (OXY/NVDA/GOOG等, $B)',
+              data: [2.59, 2.85, 2.76, 2.97, 2.34],
+              backgroundColor: '#6366F1',
+              borderRadius: 4,
+              stack: 'portfolio'
+            },
+            {
+              type: 'line',
+              label: 'H&H 13F 美股持仓总市值 ($B)',
+              data: [15.90, 16.80, 16.60, 19.10, 17.19],
+              borderColor: '#06B6D4',
+              backgroundColor: '#06B6D4',
+              borderWidth: 2.5,
+              pointRadius: 4,
+              tension: 0.25
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: colors.text, font: { size: 11, family: 'Inter' }, usePointStyle: true }
+            },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `${ctx.dataset.label}: $${ctx.parsed.y.toFixed(2)}B`
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { color: colors.text, font: { size: 11, weight: '600' } }
+            },
+            y: {
+              min: 0,
+              max: 22,
+              grid: { color: colors.grid },
+              ticks: { color: colors.text, font: { size: 11 }, callback: v => '$' + v + 'B' }
+            }
+          }
+        }
+      };
+
+      // 视图 B：2026Q3 重点调仓标的股数变动幅度 (%)
+      const splitConfig = {
+        type: 'bar',
+        data: {
+          labels: [
+            'TSLA (特斯拉 · 大举增持+69.96万股)',
+            'PDD (拼多多 · 增持+296.88万股破12%)',
+            'MSFT (微软 · 微调-5.2%)',
+            'BRK.B (伯克希尔B · 再平衡-9.5%)',
+            'CRDO (Credo · 逢高止盈-14.3%)',
+            'AAPL (苹果 · 含期权交割-21.8%)',
+            'GOOG (谷歌C · 收缩敞口-41.5%)',
+            'NVDA (英伟达 · 含被Call走-63.1%)',
+            'BABA (阿里巴巴 · 彻底清仓-100%)'
+          ],
+          datasets: [
+            {
+              label: '2026Q3 持股数量环比变动 (%)',
+              data: [20.70, 11.86, -5.20, -9.46, -14.25, -21.76, -41.50, -63.07, -100.00],
+              backgroundColor: [
+                '#10B981',
+                '#34D399',
+                '#FBBF24',
+                '#F59E0B',
+                '#F97316',
+                '#FB7185',
+                '#F43F5E',
+                '#E11D48',
+                '#9F1239'
+              ],
+              borderRadius: 5,
+              barThickness: 18
+            }
+          ]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `2026Q3 股数变动: ${ctx.parsed.x > 0 ? '+' : ''}${ctx.parsed.x.toFixed(2)}%`
+              }
+            }
+          },
+          scales: {
+            x: {
+              min: -105,
+              max: 35,
+              grid: { color: colors.grid },
+              ticks: { color: colors.text, font: { size: 11 }, callback: v => (v > 0 ? '+' : '') + v + '%' }
+            },
+            y: {
+              grid: { display: false },
+              ticks: { color: colors.text, font: { size: 11, weight: '600' } }
+            }
+          }
+        }
+      };
+
+      if (bizChartInstance) bizChartInstance.destroy();
+      bizChartInstance = new Chart(ctx, currentBizMode === 'sector_evolution' ? evoConfig : splitConfig);
+    }
+
+    function switchBizChart(mode) {
+      currentBizMode = mode;
+      const btnEvo = document.getElementById('btn-chart-evo');
+      const btnSplit = document.getElementById('btn-chart-split');
+      const titleEl = document.getElementById('biz-chart-title');
+      const subEl = document.getElementById('biz-chart-sub');
+
+      if (mode === 'sector_evolution') {
+        btnEvo.className = 'px-2.5 py-1 rounded-md font-semibold bg-white dark:bg-navy-700 text-mogold-600 dark:text-mogold-400 shadow-sm transition cursor-pointer';
+        btnSplit.className = 'px-2.5 py-1 rounded-md font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition cursor-pointer';
+        titleEl.textContent = '2025Q3–2026Q3 段永平 H&H 13F 持仓规模演进与核心资产分层';
+        subEl.textContent = '双核（AAPL+BRK.B）始终占据 65%~75% 绝对权重，拼多多与特斯拉占比在 2026Q3 创历史新高（合计 21.11%）';
+      } else {
+        btnSplit.className = 'px-2.5 py-1 rounded-md font-semibold bg-white dark:bg-navy-700 text-mogold-600 dark:text-mogold-400 shadow-sm transition cursor-pointer';
+        btnEvo.className = 'px-2.5 py-1 rounded-md font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition cursor-pointer';
+        titleEl.textContent = '2026Q3 段永平 H&H 重点调仓标的股数增减持幅度拆解（另新进 SpaceX）';
+        subEl.textContent = '逆势增持特斯拉（+20.7%）与拼多多（+11.9%），期权交割与主动减持英伟达（-63.1%）、谷歌（-41.5%），清仓阿里（-100%）';
+      }
+      initBizChart();
+    }
+
+    function initRadarChart() {
+      const ctx = document.getElementById('moatRadarChart').getContext('2d');
+      const colors = getChartColors();
+
+      if (radarChartInstance) radarChartInstance.destroy();
+      radarChartInstance = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: [
+            '实业家商业模式穿透力',
+            '核心重仓集中度与定力',
+            'Sell Put / Call 期权现金流增强',
+            '不为清单与零杠杆风控安全垫',
+            '中美跨市场皇冠资产覆盖'
+          ],
+          datasets: [
+            {
+              label: '段永平 H&H 组合',
+              data: [9.9, 9.8, 9.7, 9.8, 9.9],
+              borderColor: '#F59E0B',
+              backgroundColor: 'rgba(245, 158, 11, 0.24)',
+              pointBackgroundColor: '#F59E0B',
+              borderWidth: 2.5
+            },
+            {
+              label: '标普 500 指数 (S&P 500)',
+              data: [8.0, 6.5, 5.0, 7.5, 6.0],
+              borderColor: '#10B981',
+              backgroundColor: 'rgba(16, 185, 129, 0.14)',
+              pointBackgroundColor: '#10B981',
+              borderWidth: 2.0
+            },
+            {
+              label: '华尔街对冲基金均值',
+              data: [7.2, 6.8, 7.5, 5.2, 6.5],
+              borderColor: '#06B6D4',
+              backgroundColor: 'rgba(6, 182, 212, 0.12)',
+              pointBackgroundColor: '#06B6D4',
+              borderWidth: 1.8,
+              borderDash: [4, 4]
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: colors.text, font: { size: 11 }, usePointStyle: true }
+            }
+          },
+          scales: {
+            r: {
+              min: 0,
+              max: 10,
+              ticks: { display: false, stepSize: 2 },
+              grid: { color: colors.grid },
+              angleLines: { color: colors.radarAngle },
+              pointLabels: { color: colors.text, font: { size: 11, weight: '600' } }
+            }
+          }
+        }
+      });
+    }
+
+    function initCompMarginChart() {
+      const ctx = document.getElementById('compMarginChart').getContext('2d');
+      const colors = getChartColors();
+
+      if (compMarginChartInstance) compMarginChartInstance.destroy();
+      compMarginChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: [
+            '#1 AAPL (苹果 · 2,120万股)',
+            '#2 BRK.B (伯克希尔B · 826万股)',
+            '#3 PDD (拼多多 · 2,799万股)',
+            '#4 TSLA (特斯拉 · 408万股)',
+            '#5 OXY (西方石油 · 1,027万股)',
+            '#6 NVDA (英伟达 · 232万股)',
+            '#7 GOOG (谷歌C · 285万股)',
+            '#8 MSFT (微软 · 51万股)',
+            '#9 DIS (迪士尼 · 192万股)',
+            '#10 UNH (联合健康 · 25.5万股)'
+          ],
+          datasets: [
+            {
+              label: '2026Q3 持仓市值 ($B)',
+              data: [7.06, 4.16, 2.18, 1.45, 0.57, 0.53, 0.48, 0.23, 0.20, 0.15],
+              backgroundColor: '#F59E0B',
+              borderRadius: 5,
+              barThickness: 12
+            },
+            {
+              label: '占 13F 组合权重 (%)',
+              data: [41.07, 24.21, 12.69, 8.42, 3.30, 3.08, 2.82, 1.33, 1.14, 0.85],
+              backgroundColor: '#10B981',
+              borderRadius: 5,
+              barThickness: 12
+            }
+          ]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: colors.text, font: { size: 11 }, usePointStyle: true }
+            },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => ctx.datasetIndex === 0
+                  ? `持仓市值: $${ctx.parsed.x.toFixed(2)}B`
+                  : `组合权重: ${ctx.parsed.x.toFixed(2)}%`
+              }
+            }
+          },
+          scales: {
+            x: {
+              max: 45,
+              grid: { color: colors.grid },
+              ticks: { color: colors.text, font: { size: 11 }, callback: v => v + ' ($B / %)' }
+            },
+            y: {
+              grid: { display: false },
+              ticks: { color: colors.text, font: { size: 11, weight: '600' } }
+            }
+          }
+        }
+      });
+    }
+
+    function initValEvolutionChart() {
+      const ctx = document.getElementById('valEvolutionChart').getContext('2d');
+      const colors = getChartColors();
+
+      if (valEvolutionChartInstance) valEvolutionChartInstance.destroy();
+      valEvolutionChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['2025Q3', '2025Q4', '2026Q1', '2026Q2', '2026Q3'],
+          datasets: [
+            {
+              type: 'bar',
+              label: 'H&H 13F 美股持仓总市值 ($B)',
+              data: [15.90, 16.80, 16.60, 19.10, 17.19],
+              backgroundColor: 'rgba(245, 158, 11, 0.85)',
+              borderRadius: 5,
+              barThickness: 28,
+              yAxisID: 'y'
+            },
+            {
+              type: 'line',
+              label: '进攻双翼 (PDD + TSLA) 合计占 13F 权重 (%)',
+              data: [9.18, 11.01, 13.49, 15.97, 21.11],
+              borderColor: '#10B981',
+              backgroundColor: '#10B981',
+              borderWidth: 3,
+              pointRadius: 5,
+              pointHoverRadius: 7,
+              tension: 0.25,
+              yAxisID: 'y1'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: colors.text, font: { size: 11, family: 'Inter' }, usePointStyle: true }
+            },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => ctx.datasetIndex === 0
+                  ? `${ctx.dataset.label}: $${ctx.parsed.y.toFixed(2)}B`
+                  : `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}%`
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { color: colors.text, font: { size: 11, weight: '600' } }
+            },
+            y: {
+              type: 'linear',
+              position: 'left',
+              min: 10,
+              max: 22,
+              grid: { color: colors.grid },
+              ticks: { color: colors.text, font: { size: 11 }, callback: v => '$' + v + 'B' },
+              title: { display: true, text: '13F 美股持仓总市值 ($B)', color: colors.text, font: { size: 11 } }
+            },
+            y1: {
+              type: 'linear',
+              position: 'right',
+              min: 0,
+              max: 25,
+              grid: { drawOnChartArea: false },
+              ticks: { color: '#10B981', font: { size: 11, weight: '600' }, callback: v => v + '%' },
+              title: { display: true, text: 'PDD + TSLA 合计权重 (%)', color: '#10B981', font: { size: 11 } }
+            }
+          }
+        }
+      });
+    }
+
+    function updateChartsTheme() {
+      initBizChart();
+      initRadarChart();
+      initCompMarginChart();
+      initValEvolutionChart();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderHoldingsTable();
+      loadKpiChecklist();
+      updateDividendSimulator();
+      initBizChart();
+      initRadarChart();
+      initCompMarginChart();
+      initValEvolutionChart();
+    });
+  </script>
+</body>
+</html>
